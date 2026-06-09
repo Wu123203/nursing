@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.elderly.mapper.VisitMapper">
+    <resultMap id="BaseResultMap" type="com.elderly.entity.Visit">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="live_id" jdbcType="INTEGER" property="liveId"/>
+        <result column="visitor_name" jdbcType="VARCHAR" property="visitorName"/>
+        <result column="visitor_phone" jdbcType="VARCHAR" property="visitorPhone"/>
+        <result column="visitor_card" jdbcType="VARCHAR" property="visitorCard"/>
+        <result column="visit_time" jdbcType="TIMESTAMP" property="visitTime"/>
+        <result column="leave_time" jdbcType="TIMESTAMP" property="leaveTime"/>
+        <result column="content" jdbcType="VARCHAR" property="content"/>
+        <result column="status" jdbcType="INTEGER" property="status"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id
+        , live_id, visitor_name, visitor_phone, visitor_card, visit_time, leave_time, content,
+    status, create_time, update_time
+    </sql>
+
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from t_visit
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        delete
+        from t_visit
+        where id = #{id,jdbcType=INTEGER}
+    </delete>
+
+    <insert id="insert" parameterType="com.elderly.entity.Visit">
+        insert into t_visit (id, live_id, visitor_name,
+                             visitor_phone, visitor_card, visit_time,
+                             leave_time, content, status,
+                             create_time, update_time)
+        values (#{id,jdbcType=INTEGER}, #{liveId,jdbcType=INTEGER}, #{visitorName,jdbcType=VARCHAR},
+                #{visitorPhone,jdbcType=VARCHAR}, #{visitorCard,jdbcType=VARCHAR}, #{visitTime,jdbcType=TIMESTAMP},
+                #{leaveTime,jdbcType=TIMESTAMP}, #{content,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER},
+                #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP})
+    </insert>
+
+    <insert id="insertSelective" parameterType="com.elderly.entity.Visit">
+        insert into t_visit
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="liveId != null">
+                live_id,
+            </if>
+            <if test="visitorName != null">
+                visitor_name,
+            </if>
+            <if test="visitorPhone != null">
+                visitor_phone,
+            </if>
+            <if test="visitorCard != null">
+                visitor_card,
+            </if>
+            <if test="visitTime != null">
+                visit_time,
+            </if>
+            <if test="leaveTime != null">
+                leave_time,
+            </if>
+            <if test="content != null">
+                content,
+            </if>
+            <if test="status != null">
+                status,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+            <if test="updateTime != null">
+                update_time,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=INTEGER},
+            </if>
+            <if test="liveId != null">
+                #{liveId,jdbcType=INTEGER},
+            </if>
+            <if test="visitorName != null">
+                #{visitorName,jdbcType=VARCHAR},
+            </if>
+            <if test="visitorPhone != null">
+                #{visitorPhone,jdbcType=VARCHAR},
+            </if>
+            <if test="visitorCard != null">
+                #{visitorCard,jdbcType=VARCHAR},
+            </if>
+            <if test="visitTime != null">
+                #{visitTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="leaveTime != null">
+                #{leaveTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="content != null">
+                #{content,jdbcType=VARCHAR},
+            </if>
+            <if test="status != null">
+                #{status,jdbcType=INTEGER},
+            </if>
+            <if test="createTime != null">
+                #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateTime != null">
+                #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="updateByPrimaryKeySelective" parameterType="com.elderly.entity.Visit">
+        update t_visit
+        <set>
+            <if test="liveId != null">
+                live_id = #{liveId,jdbcType=INTEGER},
+            </if>
+            <if test="visitorName != null">
+                visitor_name = #{visitorName,jdbcType=VARCHAR},
+            </if>
+            <if test="visitorPhone != null">
+                visitor_phone = #{visitorPhone,jdbcType=VARCHAR},
+            </if>
+            <if test="visitorCard != null">
+                visitor_card = #{visitorCard,jdbcType=VARCHAR},
+            </if>
+            <if test="visitTime != null">
+                visit_time = #{visitTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="leaveTime != null">
+                leave_time = #{leaveTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="content != null">
+                content = #{content,jdbcType=VARCHAR},
+            </if>
+            <if test="status != null">
+                status = #{status,jdbcType=INTEGER},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+
+    <update id="updateByPrimaryKey" parameterType="com.elderly.entity.Visit">
+        update t_visit
+        set live_id       = #{liveId,jdbcType=INTEGER},
+            visitor_name  = #{visitorName,jdbcType=VARCHAR},
+            visitor_phone = #{visitorPhone,jdbcType=VARCHAR},
+            visitor_card  = #{visitorCard,jdbcType=VARCHAR},
+            visit_time    = #{visitTime,jdbcType=TIMESTAMP},
+            leave_time    = #{leaveTime,jdbcType=TIMESTAMP},
+            content       = #{content,jdbcType=VARCHAR},
+            status        = #{status,jdbcType=INTEGER},
+            create_time   = #{createTime,jdbcType=TIMESTAMP},
+            update_time   = #{updateTime,jdbcType=TIMESTAMP}
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+
+    <select id="findList" resultType="com.elderly.entity.Visit">
+        select a.*,
+        b.bed_id,b.name,
+        c.bed_no,c.room_id,
+        d.room_name
+        from t_visit a
+        inner join t_live b on a.live_id = b.id
+        inner join t_bed c on b.bed_id = c.id
+        inner join t_room d on c.room_id = d.id
+        <where>
+            <if test="status != null and status != ''">
+                and a.status = #{status}
+            </if>
+            <if test="visitorName != null and visitorName != ''">
+                and a.visitor_name like concat('%',#{visitorName},'%')
+            </if>
+            <if test="userId != null and userId != ''">
+                and b.user_id = #{userId}
+            </if>
+            <if test="name != null and name != ''">
+                and b.name like concat('%',#{name},'%')
+            </if>
+        </where>
+        order by a.create_time desc
+        limit #{start},#{limit};
+    </select>
+
+    <select id="findTotal" resultType="java.lang.Integer">
+      select count(a.id)
+      from t_visit a
+      inner join t_live b on a.live_id = b.id
+      inner join t_bed c on b.bed_id = c.id
+      inner join t_room d on c.room_id = d.id
+      <where>
+        <if test="status != null and status != ''">
+          and a.status = #{status}
+        </if>
+        <if test="visitorName != null and visitorName != ''">
+          and a.visitor_name like concat('%',#{visitorName},'%')
+        </if>
+        <if test="userId != null and userId != ''">
+          and b.user_id = #{userId}
+        </if>
+        <if test="name != null and name != ''">
+          and b.name like concat('%',#{name},'%')
+        </if>
+      </where>
+    </select>
+
+</mapper>

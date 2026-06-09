@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.elderly.mapper.LeaveMapper">
+    <resultMap id="BaseResultMap" type="com.elderly.entity.Leave">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="live_id" jdbcType="INTEGER" property="liveId"/>
+        <result column="begin_time" jdbcType="TIMESTAMP" property="beginTime"/>
+        <result column="end_time" jdbcType="TIMESTAMP" property="endTime"/>
+        <result column="content" jdbcType="VARCHAR" property="content"/>
+        <result column="status" jdbcType="VARCHAR" property="status"/>
+        <result column="remark" jdbcType="VARCHAR" property="remark"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id
+        , live_id, begin_time, end_time, content, status, remark, create_time, update_time
+    </sql>
+
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from t_leave
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        delete
+        from t_leave
+        where id = #{id,jdbcType=INTEGER}
+    </delete>
+
+    <insert id="insert" parameterType="com.elderly.entity.Leave">
+        insert into t_leave (id, live_id, begin_time,
+                             end_time, content, status,
+                             remark, create_time, update_time)
+        values (#{id,jdbcType=INTEGER}, #{liveId,jdbcType=INTEGER}, #{beginTime,jdbcType=TIMESTAMP},
+                #{endTime,jdbcType=TIMESTAMP}, #{content,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR},
+                #{remark,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP})
+    </insert>
+
+    <insert id="insertSelective" parameterType="com.elderly.entity.Leave">
+        insert into t_leave
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="liveId != null">
+                live_id,
+            </if>
+            <if test="beginTime != null">
+                begin_time,
+            </if>
+            <if test="endTime != null">
+                end_time,
+            </if>
+            <if test="content != null">
+                content,
+            </if>
+            <if test="status != null">
+                status,
+            </if>
+            <if test="remark != null">
+                remark,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+            <if test="updateTime != null">
+                update_time,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=INTEGER},
+            </if>
+            <if test="liveId != null">
+                #{liveId,jdbcType=INTEGER},
+            </if>
+            <if test="beginTime != null">
+                #{beginTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="endTime != null">
+                #{endTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="content != null">
+                #{content,jdbcType=VARCHAR},
+            </if>
+            <if test="status != null">
+                #{status,jdbcType=VARCHAR},
+            </if>
+            <if test="remark != null">
+                #{remark,jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null">
+                #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateTime != null">
+                #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="updateByPrimaryKeySelective" parameterType="com.elderly.entity.Leave">
+        update t_leave
+        <set>
+            <if test="liveId != null">
+                live_id = #{liveId,jdbcType=INTEGER},
+            </if>
+            <if test="beginTime != null">
+                begin_time = #{beginTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="endTime != null">
+                end_time = #{endTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="content != null">
+                content = #{content,jdbcType=VARCHAR},
+            </if>
+            <if test="status != null">
+                status = #{status,jdbcType=VARCHAR},
+            </if>
+            <if test="remark != null">
+                remark = #{remark,jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+
+    <update id="updateByPrimaryKey" parameterType="com.elderly.entity.Leave">
+        update t_leave
+        set live_id     = #{liveId,jdbcType=INTEGER},
+            begin_time  = #{beginTime,jdbcType=TIMESTAMP},
+            end_time    = #{endTime,jdbcType=TIMESTAMP},
+            content     = #{content,jdbcType=VARCHAR},
+            status      = #{status,jdbcType=VARCHAR},
+            remark      = #{remark,jdbcType=VARCHAR},
+            create_time = #{createTime,jdbcType=TIMESTAMP},
+            update_time = #{updateTime,jdbcType=TIMESTAMP}
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+
+    <select id="findList" resultType="com.elderly.entity.Leave">
+        select a.*,
+        b.bed_id,b.name,
+        c.bed_no,c.room_id,
+        d.room_name
+        from t_leave a
+        inner join t_live b on a.live_id = b.id
+        inner join t_bed c on b.bed_id = c.id
+        inner join t_room d on c.room_id = d.id
+        <where>
+            <if test="status != null and status != ''">
+                and a.status = #{status}
+            </if>
+            <if test="visitorName != null and visitorName != ''">
+                and a.visitor_name like concat('%',#{visitorName},'%')
+            </if>
+            <if test="userId != null and userId != ''">
+                and b.user_id = #{userId}
+            </if>
+            <if test="name != null and name != ''">
+                and b.name like concat('%',#{name},'%')
+            </if>
+        </where>
+        order by a.create_time desc
+        limit #{start},#{limit};
+    </select>
+
+    <select id="findTotal" resultType="java.lang.Integer">
+        select count(a.id)
+        from t_leave a
+        inner join t_live b on a.live_id = b.id
+        inner join t_bed c on b.bed_id = c.id
+        inner join t_room d on c.room_id = d.id
+        <where>
+            <if test="status != null and status != ''">
+                and a.status = #{status}
+            </if>
+            <if test="visitorName != null and visitorName != ''">
+                and a.visitor_name like concat('%',#{visitorName},'%')
+            </if>
+            <if test="userId != null and userId != ''">
+                and b.user_id = #{userId}
+            </if>
+            <if test="name != null and name != ''">
+                and b.name like concat('%',#{name},'%')
+            </if>
+        </where>
+    </select>
+</mapper>

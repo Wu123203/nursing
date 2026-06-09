@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.elderly.mapper.LiveMapper">
+    <resultMap id="BaseResultMap" type="com.elderly.entity.Live">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="user_id" jdbcType="INTEGER" property="userId"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="sex" jdbcType="INTEGER" property="sex"/>
+        <result column="birthday" jdbcType="DATE" property="birthday"/>
+        <result column="phone" jdbcType="VARCHAR" property="phone"/>
+        <result column="bed_id" jdbcType="INTEGER" property="bedId"/>
+        <result column="begin_time" jdbcType="DATE" property="beginTime"/>
+        <result column="end_time" jdbcType="DATE" property="endTime"/>
+        <result column="content" jdbcType="VARCHAR" property="content"/>
+        <result column="status" jdbcType="INTEGER" property="status"/>
+        <result column="remark" jdbcType="VARCHAR" property="remark"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id
+        , user_id, name, sex, birthday, phone, bed_id, begin_time, end_time, content, status, remark,
+    create_time, update_time
+    </sql>
+
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from t_live
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        delete
+        from t_live
+        where id = #{id,jdbcType=INTEGER}
+    </delete>
+
+    <insert id="insert" parameterType="com.elderly.entity.Live">
+        insert into t_live (id, user_id, name,
+                            sex, birthday, phone,
+                            bed_id, begin_time, end_time,
+                            content, status, remark, create_time,
+                            update_time)
+        values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR},
+                #{sex,jdbcType=INTEGER}, #{birthday,jdbcType=DATE}, #{phone,jdbcType=VARCHAR},
+                #{bedId,jdbcType=INTEGER}, #{beginTime,jdbcType=DATE}, #{endTime,jdbcType=DATE},
+                #{content,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, #{remark,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP},
+                #{updateTime,jdbcType=TIMESTAMP})
+    </insert>
+
+    <insert id="insertSelective" parameterType="com.elderly.entity.Live">
+        insert into t_live
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="userId != null">
+                user_id,
+            </if>
+            <if test="name != null">
+                name,
+            </if>
+            <if test="sex != null">
+                sex,
+            </if>
+            <if test="birthday != null">
+                birthday,
+            </if>
+            <if test="phone != null">
+                phone,
+            </if>
+            <if test="bedId != null">
+                bed_id,
+            </if>
+            <if test="beginTime != null">
+                begin_time,
+            </if>
+            <if test="endTime != null">
+                end_time,
+            </if>
+            <if test="content != null">
+                content,
+            </if>
+            <if test="status != null">
+                status,
+            </if>
+            <if test="remark != null">
+                remark,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+            <if test="updateTime != null">
+                update_time,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=INTEGER},
+            </if>
+            <if test="userId != null">
+                #{userId,jdbcType=INTEGER},
+            </if>
+            <if test="name != null">
+                #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="sex != null">
+                #{sex,jdbcType=INTEGER},
+            </if>
+            <if test="birthday != null">
+                #{birthday,jdbcType=DATE},
+            </if>
+            <if test="phone != null">
+                #{phone,jdbcType=VARCHAR},
+            </if>
+            <if test="bedId != null">
+                #{bedId,jdbcType=INTEGER},
+            </if>
+            <if test="beginTime != null">
+                #{beginTime,jdbcType=DATE},
+            </if>
+            <if test="endTime != null">
+                #{endTime,jdbcType=DATE},
+            </if>
+            <if test="content != null">
+                #{content,jdbcType=VARCHAR},
+            </if>
+            <if test="status != null">
+                #{status,jdbcType=INTEGER},
+            </if>
+            <if test="remark != null">
+                #{remark,jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null">
+                #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateTime != null">
+                #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="updateByPrimaryKeySelective" parameterType="com.elderly.entity.Live">
+        update t_live
+        <set>
+            <if test="userId != null">
+                user_id = #{userId,jdbcType=INTEGER},
+            </if>
+            <if test="name != null">
+                name = #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="sex != null">
+                sex = #{sex,jdbcType=INTEGER},
+            </if>
+            <if test="birthday != null">
+                birthday = #{birthday,jdbcType=DATE},
+            </if>
+            <if test="phone != null">
+                phone = #{phone,jdbcType=VARCHAR},
+            </if>
+            <if test="bedId != null">
+                bed_id = #{bedId,jdbcType=INTEGER},
+            </if>
+            <if test="beginTime != null">
+                begin_time = #{beginTime,jdbcType=DATE},
+            </if>
+            <if test="endTime != null">
+                end_time = #{endTime,jdbcType=DATE},
+            </if>
+            <if test="content != null">
+                content = #{content,jdbcType=VARCHAR},
+            </if>
+            <if test="status != null">
+                status = #{status,jdbcType=INTEGER},
+            </if>
+            <if test="remark != null">
+                remark = #{remark,jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+
+    <update id="updateByPrimaryKey" parameterType="com.elderly.entity.Live">
+        update t_live
+        set user_id     = #{userId,jdbcType=INTEGER},
+            name        = #{name,jdbcType=VARCHAR},
+            sex         = #{sex,jdbcType=INTEGER},
+            birthday    = #{birthday,jdbcType=DATE},
+            phone       = #{phone,jdbcType=VARCHAR},
+            bed_id      = #{bedId,jdbcType=INTEGER},
+            begin_time  = #{beginTime,jdbcType=DATE},
+            end_time    = #{endTime,jdbcType=DATE},
+            content     = #{content,jdbcType=VARCHAR},
+            status      = #{status,jdbcType=INTEGER},
+            remark     = #{remark,jdbcType=VARCHAR},
+            create_time = #{createTime,jdbcType=TIMESTAMP},
+            update_time = #{updateTime,jdbcType=TIMESTAMP}
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+
+    <select id="findList" resultType="com.elderly.entity.Live">
+        select a.*,
+        b.bed_no,b.room_id,
+        c.room_name
+        from t_live a
+        inner join t_bed b on a.bed_id = b.id
+        inner join t_room c on b.room_id = c.id
+        <where>
+            <if test="userId != null and userId != ''">
+                and a.user_id = #{userId}
+            </if>
+            <if test="bedId != null and bedId != ''">
+                and a.bed_id = #{bedId}
+            </if>
+            <if test="roomId != null and roomId != ''">
+                and b.room_id = #{roomId}
+            </if>
+            <if test="bedNo != null and bedNo != ''">
+                and b.bed_no like concat('%',#{bedNo},'%')
+            </if>
+        </where>
+        order by a.create_time desc
+        limit #{start},#{limit};
+    </select>
+
+    <select id="findTotal" resultType="java.lang.Integer">
+      select count(a.id)
+      from t_live a
+      inner join t_bed b on a.bed_id = b.id
+      inner join t_room c on b.room_id = c.id
+      <where>
+        <if test="userId != null and userId != ''">
+          and a.user_id = #{userId}
+        </if>
+          <if test="bedId != null and bedId != ''">
+              and a.bed_id = #{bedId}
+          </if>
+        <if test="roomId != null and roomId != ''">
+          and b.room_id = #{roomId}
+        </if>
+        <if test="bedNo != null and bedNo != ''">
+          and b.bed_no like concat('%',#{bedNo},'%')
+        </if>
+      </where>
+    </select>
+
+    <select id="findByRoom" resultType="com.elderly.entity.Live">
+        select a.*,
+        b.bed_no,b.room_id,
+        c.room_name
+        from t_live a
+        inner join t_bed b on a.bed_id = b.id
+        inner join t_room c on b.room_id = c.id
+        where b.room_id = #{roomId}
+        order by b.bed_no asc;
+    </select>
+
+    <select id="countTotal" resultType="java.lang.Integer">
+        select count(id) from t_live where status = 0;
+    </select>
+
+    <select id="countBySex" resultType="java.lang.Integer">
+        select count(id) from t_live where status = 0 and sex = #{sex};
+    </select>
+
+
+    <select id="countByDate" resultType="java.lang.Integer">
+        select count(id)
+        from t_live
+        where status = 0
+          and begin_time = #{beginTime}
+    </select>
+
+</mapper>

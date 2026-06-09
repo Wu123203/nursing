@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.elderly.mapper.NewsMapper">
+    <resultMap id="BaseResultMap" type="com.elderly.entity.News">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="title" jdbcType="VARCHAR" property="title"/>
+        <result column="brief" jdbcType="VARCHAR" property="brief"/>
+        <result column="cover" jdbcType="VARCHAR" property="cover"/>
+        <result column="content" jdbcType="VARCHAR" property="content"/>
+        <result column="click_num" jdbcType="INTEGER" property="clickNum"/>
+        <result column="like_num" jdbcType="INTEGER" property="likeNum"/>
+        <result column="comment_num" jdbcType="INTEGER" property="commentNum"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id
+        , title, brief, cover, content, click_num, like_num, comment_num, create_time, update_time
+    </sql>
+
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from t_news
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        delete
+        from t_news
+        where id = #{id,jdbcType=INTEGER}
+    </delete>
+
+    <insert id="insert" parameterType="com.elderly.entity.News">
+        insert into t_news (id, title, brief,
+                            cover, content, click_num, like_num, comment_num, create_time, update_time)
+        values (#{id,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR},
+                #{brief,jdbcType=VARCHAR},
+                #{cover,jdbcType=VARCHAR}, #{content,jdbcType=VARCHAR}, #{clickNum,jdbcType=INTEGER},
+                #{likeNum,jdbcType=INTEGER}, #{commentNum,jdbcType=INTEGER},
+                #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP})
+    </insert>
+
+    <insert id="insertSelective" parameterType="com.elderly.entity.News">
+        insert into t_news
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="title != null">
+                title,
+            </if>
+            <if test="brief != null">
+                brief,
+            </if>
+            <if test="cover != null">
+                cover,
+            </if>
+            <if test="content != null">
+                content,
+            </if>
+            <if test="clickNum != null">
+                click_num,
+            </if>
+            <if test="likeNum != null">
+                like_num,
+            </if>
+            <if test="commentNum != null">
+                comment_num,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+            <if test="updateTime != null">
+                update_time,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=INTEGER},
+            </if>
+            <if test="title != null">
+                #{title,jdbcType=VARCHAR},
+            </if>
+            <if test="brief != null">
+                #{brief,jdbcType=VARCHAR},
+            </if>
+            <if test="cover != null">
+                #{cover,jdbcType=VARCHAR},
+            </if>
+            <if test="content != null">
+                #{content,jdbcType=VARCHAR},
+            </if>
+            <if test="clickNum != null">
+                #{clickNum,jdbcType=INTEGER},
+            </if>
+            <if test="likeNum != null">
+                #{likeNum,jdbcType=INTEGER},
+            </if>
+            <if test="commentNum != null">
+                #{commentNum,jdbcType=INTEGER},
+            </if>
+            <if test="createTime != null">
+                #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateTime != null">
+                #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="updateByPrimaryKeySelective" parameterType="com.elderly.entity.News">
+        update t_news
+        <set>
+            <if test="title != null">
+                title = #{title,jdbcType=VARCHAR},
+            </if>
+            <if test="brief != null">
+                brief = #{brief,jdbcType=VARCHAR},
+            </if>
+            <if test="cover != null">
+                cover = #{cover,jdbcType=VARCHAR},
+            </if>
+            <if test="content != null">
+                content = #{content,jdbcType=VARCHAR},
+            </if>
+            <if test="clickNum != null">
+                click_num = #{clickNum,jdbcType=INTEGER},
+            </if>
+            <if test="likeNum != null">
+                like_num = #{likeNum,jdbcType=INTEGER},
+            </if>
+            <if test="commentNum != null">
+                comment_num = #{commentNum,jdbcType=INTEGER},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+
+    <update id="updateByPrimaryKey" parameterType="com.elderly.entity.News">
+        update t_news
+        set title       = #{title,jdbcType=VARCHAR},
+            brief       = #{brief,jdbcType=VARCHAR},
+            cover       = #{cover,jdbcType=VARCHAR},
+            content     = #{content,jdbcType=VARCHAR},
+            click_num   = #{clickNum,jdbcType=INTEGER},
+            like_num    = #{likeNum,jdbcType=INTEGER},
+            comment_num = #{commentNum,jdbcType=INTEGER},
+            create_time = #{createTime,jdbcType=TIMESTAMP},
+            update_time = #{updateTime,jdbcType=TIMESTAMP}
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+
+
+    <select id="findList" resultType="com.elderly.entity.News">
+        select *
+        from t_news
+        <where>
+            <if test="title != null and title != ''">
+                and title like concat('%',#{title},'%')
+            </if>
+        </where>
+        order by create_time desc
+        limit #{start},#{limit};
+    </select>
+
+    <select id="findTotal" resultType="java.lang.Integer">
+        select count(id)
+        from t_news
+        <where>
+            <if test="title != null and title != ''">
+                and title like concat('%',#{title},'%')
+            </if>
+        </where>
+    </select>
+
+
+    <select id="findLatestTopList" resultType="com.elderly.entity.News">
+        select *
+        from t_news
+        order by create_time desc limit #{limit};
+    </select>
+
+
+    <select id="findClickTopList" resultType="com.elderly.entity.News">
+        select *
+        from t_news
+        order by click_num desc limit #{limit};
+    </select>
+
+    <update id="updateClickNum">
+        update t_news
+        set click_num = #{clickNum,jdbcType=INTEGER}
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+
+</mapper>
