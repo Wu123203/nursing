@@ -25,13 +25,13 @@ public class SqlInjectInterceptor implements Interceptor {
     
     private static final Logger logger = LoggerFactory.getLogger(SqlInjectInterceptor.class);
     
-    // SQL注入检测正则 - 检测常见的SQL注入关键词
+    // SQL注入检测正则 - 检测常见的SQL注入关键词（仅检测真正危险的模式）
     private static final Pattern SQL_INJECT_PATTERN = Pattern.compile(
-        "(?i)(union\\s+select|exec\\s+|execute\\s+|insert\\s+into|delete\\s+from|" +
-        "update\\s+.*set|drop\\s+table|alter\\s+table|truncate\\s+table|" +
-        "create\\s+table|rename\\s+table|desc\\s+|--\\s*|;\\s*|'\\s*|\\|\\s*|" +
-        "\\*\\s*|\\?\\s*|\\[\\s*|\\]\\s*|\\{\\s*|\\}\\s*|<script>|<iframe>|" +
-        "or\\s+\\d+=\\d+|and\\s+\\d+=\\d+|sleep\\s*\\(|benchmark\\s*\\()"
+        "(?i)(union\\s+select\\s|exec\\s+\\w+|execute\\s+\\w+|insert\\s+into\\s|" +
+        "delete\\s+from\\s|drop\\s+table\\s|alter\\s+table\\s|truncate\\s+table\\s|" +
+        "create\\s+table\\s|rename\\s+table\\s|select\\s+.*from\\s.*where\\s.*=.*--|" +
+        "or\\s+\\d+\\s*=\\s*\\d+|and\\s+\\d+\\s*=\\s*\\d+|sleep\\s*\\(\\d+\\)|" +
+        "benchmark\\s*\\(\\d+,.*\\)|union\\s+all\\s+select|<script[^>]*>|</script>)"
     );
 
     @Override

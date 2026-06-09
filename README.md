@@ -18,7 +18,7 @@
 - **MyBatis 3.0.2** - 持久层框架
 - **MySQL 8.0+** - 数据库
 - **Druid 1.2.18** - 数据库连接池
-- **Redis** - 缓存
+- **Redis** - 缓存、分布式锁、接口限流
 - **Hutool 5.7.3** - Java 工具库
 - **JWT 0.12.5** - JSON Web Token
 
@@ -214,6 +214,16 @@ npm run serve
 - `feedback` - 反馈表
 
 ## 📝 更新日志
+
+### 2026-06-09
+- **统一异常处理**：完善全局异常处理器，统一错误响应格式，添加统一错误码枚举 `ErrorCode`
+- **统一响应格式**：`JSONReturn` 添加时间戳字段，支持统一的错误码处理
+- **SQL 注入防护**：添加 `SqlInjectInterceptor` 拦截器，检测常见 SQL 注入攻击
+- **输入参数校验**：为 `LoginDto` 添加 JSR-380 验证注解，增强接口安全性
+- **Redis 缓存优化**：实现新闻浏览量统计、点赞功能缓存、验证码存储等缓存策略
+- **分布式锁支持**：基于 Redis 实现 `DistributedLock`，支持高并发场景
+- **接口限流**：基于 Redis 实现 IP 限流拦截器，防止恶意请求
+- **JWT Token 黑名单**：支持主动登出，将 Token 加入 Redis 黑名单
 
 ### 2026-06-08
 - 集成 Spring Security + JWT 实现认证授权

@@ -63,17 +63,22 @@ public class UserServiceImpl implements UserService {
         String captchaKey = loginDto.getCaptchaKey();
         String captcha = loginDto.getCaptcha();
 
+        logger.info("用户登录尝试: username={}, role={}", username, loginDto.getRole());
+
         // 验证验证码（从 Redis 获取）
         if (captchaKey == null || captchaKey.isEmpty()) {
+            logger.warn("用户登录失败: username={}, reason=未提供验证码", username);
             return JSONReturn.failed("请先获取验证码！");
         }
         String redisCaptchaKey = RedisConstants.CAPTCHA_KEY + captchaKey;
         Object captchaObj = redisUtil.get(redisCaptchaKey);
         if (captchaObj == null) {
+            logger.warn("用户登录失败: username={}, reason=验证码已过期", username);
             return JSONReturn.failed("验证码已过期，请刷新验证码！");
         }
         String realCaptcha = captchaObj.toString();
         if (!captcha.equalsIgnoreCase(realCaptcha)) {
+            logger.warn("用户登录失败: username={}, reason=验证码错误", username);
             return JSONReturn.failed("验证码错误！");
         }
 
@@ -86,6 +91,7 @@ public class UserServiceImpl implements UserService {
         if (failCountObj != null) {
             int failCount = Integer.parseInt(failCountObj.toString());
             if (failCount >= RedisConstants.MAX_LOGIN_FAIL) {
+                logger.warn("用户登录失败: username={}, reason=登录失败次数过多", username);
                 return JSONReturn.failed("登录失败次数过多，请稍后再试！");
             }
         }
@@ -100,10 +106,12 @@ public class UserServiceImpl implements UserService {
             if (role == 0) {
                 Admin admin = adminMapper.selectByUsername(username);
                 if (admin == null) {
+                    logger.warn("用户登录失败: username={}, reason=账户不存在, role=ADMIN", username);
                     return JSONReturn.failed("账户不存在！");
                 }
                 if (!admin.getPassword().equals(loginDto.getPassword())) {
                     incrementLoginFail(loginFailKey);
+                    logger.warn("用户登录失败: username={}, reason=密码错误, role=ADMIN", username);
                     return JSONReturn.failed("密码错误！");
                 }
                 BeanUtils.copyProperties(admin, loginVo);
@@ -113,13 +121,16 @@ public class UserServiceImpl implements UserService {
             } else if (role == 1) {
                 Employee employee = employeeMapper.selectByUsername(username);
                 if (employee == null) {
+                    logger.warn("用户登录失败: username={}, reason=账户不存在, role=EMPLOYEE", username);
                     return JSONReturn.failed("账户不存在！");
                 }
                 if (!employee.getPassword().equals(loginDto.getPassword())) {
                     incrementLoginFail(loginFailKey);
+                    logger.warn("用户登录失败: username={}, reason=密码错误, role=EMPLOYEE", username);
                     return JSONReturn.failed("密码错误！");
                 }
                 if (employee.getStatus() == 1) {
+                    logger.warn("用户登录失败: username={}, reason=账号已被冻结, role=EMPLOYEE", username);
                     return JSONReturn.failed("账号已被冻结，请联系管理员！");
                 }
                 BeanUtils.copyProperties(employee, loginVo);
@@ -129,13 +140,16 @@ public class UserServiceImpl implements UserService {
             } else {
                 User user = userMapper.selectByUsername(username);
                 if (user == null) {
+                    logger.warn("用户登录失败: username={}, reason=账户不存在, role=USER", username);
                     return JSONReturn.failed("账户不存在！");
                 }
                 if (!user.getPassword().equals(loginDto.getPassword())) {
                     incrementLoginFail(loginFailKey);
+                    logger.warn("用户登录失败: username={}, reason=密码错误, role=USER", username);
                     return JSONReturn.failed("密码错误！");
                 }
                 if (user.getStatus() == 1) {
+                    logger.warn("用户登录失败: username={}, reason=账号已被冻结, role=USER", username);
                     return JSONReturn.failed("账号已被冻结，请联系管理员！");
                 }
                 BeanUtils.copyProperties(user, loginVo);
@@ -156,6 +170,7 @@ public class UserServiceImpl implements UserService {
         String token = jwtUtil.generateToken(userId, username, roleStr);
         loginVo.setToken(token);
 
+        logger.info("用户登录成功: username={}, role={}, userId={}", username, roleStr, userId);
         return JSONReturn.success("登录成功！", loginVo);
     }
 

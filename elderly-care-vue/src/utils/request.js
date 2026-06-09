@@ -35,6 +35,10 @@ service.interceptors.response.use(
         } else if(response.status === 201){
             return response;
         } else {
+            // 如果有响应数据，即使状态码不是200也返回数据
+            if (response.data) {
+                return response.data;
+            }
             return Promise.reject(response);
         }
     },
@@ -45,10 +49,18 @@ service.interceptors.response.use(
             const { status, data } = error.response;
             console.error(`HTTP状态码: ${status}`);
             console.error("响应数据:", data);
-            // 返回响应数据以便前端处理
-            return Promise.resolve(data || { code: status, msg: '请求失败' });
+            // 如果后端返回了JSON格式的错误信息，直接返回
+            if (data && typeof data === 'object' && (data.code !== undefined || data.msg !== undefined)) {
+                return Promise.resolve(data);
+            }
+            // 否则包装成统一格式
+            return Promise.resolve({ 
+                code: status, 
+                msg: data && data.message ? data.message : '请求失败' 
+            });
         }
-        return Promise.reject(error);
+        // 网络错误等无响应的情况
+        return Promise.reject({ code: -1, msg: '网络异常，请稍后重试' });
     }
 );
 

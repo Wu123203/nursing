@@ -63,7 +63,9 @@ export default {
   },
   data() {
     return {
-      form: {},
+      form: {
+        captchaKey: ''
+      },
       rules: {
         username: [
           { required: true, message: '请输入账号', trigger: 'blur' },
@@ -79,7 +81,6 @@ export default {
         ],
       },
       url: '',
-      captchaKey: '',
     }
   },
   mounted() {
@@ -102,44 +103,60 @@ export default {
     handleLogin() {
       this.$refs['form'].validate((valid) => {
         if (valid) {
-          console.log("登录请求数据:", this.form);
+          console.log("登录请求数据 - username:", this.form.username);
+          console.log("登录请求数据 - password:", this.form.password);
+          console.log("登录请求数据 - role:", this.form.role);
+          console.log("登录请求数据 - captcha:", this.form.captcha);
+          console.log("登录请求数据 - captchaKey:", this.form.captchaKey);
+          console.log("完整表单数据:", JSON.stringify(this.form));
           this.$http.post("/login", this.form).then(res => {
-            console.log("登录响应:", res);
-            if (res && res.code === 200) {
-              this.$message({
-                type: "success",
-                message: "登录成功"
-              })
-              this.$store.commit('LOGIN', res.data)
-              this.$router.push("/")
-            } else {
-              // 处理各种错误情况
-              let errorMsg = '登录失败';
-              if (res && res.msg) {
-                errorMsg = res.msg;
-              } else if (res && res.message) {
-                errorMsg = res.message;
-              } else if (res && res.error) {
-                errorMsg = res.error;
-              }
-              this.$message({
-                type: "error",
-                message: errorMsg
-              })
-              // 刷新验证码
-              this.randomCode();
-            }
+            this.handleLoginResponse(res);
           }).catch(err => {
             console.error("登录异常:", err);
-            this.$message({
-              type: "error",
-              message: '网络异常，请稍后重试'
-            })
+            // 错误响应也可能包含数据，需要处理
+            if (err && typeof err === 'object') {
+              this.handleLoginResponse(err);
+            } else {
+              this.$message({
+                type: "error",
+                message: '网络异常，请稍后重试'
+              })
+            }
             // 刷新验证码
             this.randomCode();
           })
         }
       })
+    },
+    // 处理登录响应
+    handleLoginResponse(res) {
+      console.log("登录响应数据:", res);
+      if (res && res.code === 200) {
+        this.$message({
+          type: "success",
+          message: "登录成功"
+        })
+        this.$store.commit('LOGIN', res.data)
+        this.$router.push("/")
+      } else {
+        // 处理各种错误情况
+        let errorMsg = '登录失败';
+        if (res && res.msg) {
+          errorMsg = res.msg;
+        } else if (res && res.message) {
+          errorMsg = res.message;
+        } else if (res && res.error) {
+          errorMsg = res.error;
+        } else if (res && typeof res === 'string') {
+          errorMsg = res;
+        }
+        this.$message({
+          type: "error",
+          message: errorMsg
+        })
+        // 刷新验证码
+        this.randomCode();
+      }
     }
   }
 }
