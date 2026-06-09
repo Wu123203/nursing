@@ -1,5 +1,6 @@
 package com.elderly.common.exception;
 
+import com.elderly.common.enums.ErrorCode;
 import com.elderly.common.vo.JSONReturn;
 import jakarta.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
@@ -23,12 +24,12 @@ public class GlobalExceptionHandler {
     private Logger logger = LoggerFactory.getLogger(GlobalExceptionHandler.class);
 
 
-    //自定义异常
+    //自定义业务异常
     @ExceptionHandler(BizException.class)
     @ResponseBody
-    public JSONReturn<?> customer(HttpServletRequest request, BizException e) {
-        logger.error("自定义异常：", e);
-        return JSONReturn.build(e.getCode(),e.getMessage());
+    public JSONReturn<?> handleBizException(HttpServletRequest request, BizException e) {
+        logger.warn("业务异常 [{}]: {}", e.getCode(), e.getMessage());
+        return JSONReturn.failed(e.getCode(), e.getMessage());
     }
 
     //参数校验异常
@@ -39,7 +40,7 @@ public class GlobalExceptionHandler {
             .map(FieldError::getDefaultMessage)
             .collect(Collectors.joining(", "));
         logger.warn("参数校验失败：{}", message);
-        return JSONReturn.failed("参数校验失败: " + message);
+        return JSONReturn.failed(ErrorCode.PARAM_VALID_ERROR, message);
     }
 
     //安全异常（SQL注入等）
@@ -47,14 +48,22 @@ public class GlobalExceptionHandler {
     @ResponseBody
     public JSONReturn<?> handleSecurityException(HttpServletRequest request, SecurityException e) {
         logger.warn("安全异常：{}", e.getMessage());
-        return JSONReturn.failed(e.getMessage());
+        return JSONReturn.failed(ErrorCode.SQL_INJECT_ERROR, e.getMessage());
+    }
+
+    //非法参数异常
+    @ExceptionHandler(IllegalArgumentException.class)
+    @ResponseBody
+    public JSONReturn<?> handleIllegalArgumentException(HttpServletRequest request, IllegalArgumentException e) {
+        logger.warn("非法参数：{}", e.getMessage());
+        return JSONReturn.failed(ErrorCode.PARAM_ERROR, e.getMessage());
     }
 
     //系统未知异常
     @ExceptionHandler(Exception.class)
-    @ResponseBody//返回json串
-    public JSONReturn<?> error(HttpServletRequest request, Exception e) {
-        logger.error("系统内部未知异常：", e);
-        return JSONReturn.failed("服务器异常");
+    @ResponseBody
+    public JSONReturn<?> handleException(HttpServletRequest request, Exception e) {
+        logger.error("系统内部异常：", e);
+        return JSONReturn.failed(ErrorCode.SYSTEM_ERROR);
     }
 }

@@ -1,5 +1,7 @@
 package com.elderly.common.vo;
 
+import com.elderly.common.enums.ErrorCode;
+
 /**
  * 统一JSON返回
  */
@@ -13,6 +15,9 @@ public class JSONReturn<T> {
 
     //返回数据
     private T data;
+
+    //时间戳
+    private Long timestamp;
 
 
     public int getCode() {
@@ -39,10 +44,19 @@ public class JSONReturn<T> {
         this.data = data;
     }
 
+    public Long getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(Long timestamp) {
+        this.timestamp = timestamp;
+    }
+
     /**
      * 原始构造
      */
     public JSONReturn() {
+        this.timestamp = System.currentTimeMillis();
     }
 
     /**
@@ -53,6 +67,7 @@ public class JSONReturn<T> {
     public JSONReturn(Integer code, String msg) {
         this.code = code;
         this.msg = msg;
+        this.timestamp = System.currentTimeMillis();
     }
 
 
@@ -66,6 +81,7 @@ public class JSONReturn<T> {
         this.code = code;
         this.msg = msg;
         this.data = data;
+        this.timestamp = System.currentTimeMillis();
     }
 
 
@@ -156,9 +172,34 @@ public class JSONReturn<T> {
         return new JSONReturn(500,message);
     }
 
+    /**
+     * 根据错误码枚举返回失败消息
+     * @param errorCode 错误码枚举
+     * @return
+     */
+    public static JSONReturn failed(ErrorCode errorCode){
+        return new JSONReturn(errorCode.getCode(), errorCode.getMessage());
+    }
 
+    /**
+     * 根据错误码枚举返回失败消息，可自定义消息
+     * @param errorCode 错误码枚举
+     * @param message 自定义消息
+     * @return
+     */
+    public static JSONReturn failed(ErrorCode errorCode, String message){
+        return new JSONReturn(errorCode.getCode(), message);
+    }
 
-
+    /**
+     * 根据错误码返回失败消息
+     * @param code 错误码
+     * @param message 消息
+     * @return
+     */
+    public static JSONReturn failed(Integer code, String message){
+        return new JSONReturn(code, message);
+    }
 
 
 }
