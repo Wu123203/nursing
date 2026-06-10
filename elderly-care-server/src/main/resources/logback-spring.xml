@@ -4,70 +4,61 @@
     <property name="LOG_PATH" value="./logs"/>
     <property name="LOG_FILE" value="elderly-care"/>
 
-    <!-- Console Appender - 控制台输出 -->
+    <!-- Console Appender - 控制台输出（含 TraceId） -->
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
-            <!-- 日志格式：时间 [线程名] 级别 类名 - 消息 -->
-            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>
+            <pattern>%d{HH:mm:ss.SSS} %highlight(%-5level) [%thread] [%X{traceId}] %cyan(%logger{36}) - %msg%n</pattern>
             <charset>UTF-8</charset>
         </encoder>
     </appender>
 
-    <!-- File Appender - 文件输出（滚动策略） -->
+    <!-- File Appender - 全量日志滚动输出 -->
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <!-- 日志文件路径和名称 -->
         <file>${LOG_PATH}/${LOG_FILE}.log</file>
-        <!-- 是否追加到文件末尾 -->
         <append>true</append>
-        <!-- 滚动策略：按时间滚动 -->
-        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <!-- 归档日志文件名格式 -->
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
             <fileNamePattern>${LOG_PATH}/${LOG_FILE}.%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
-            <!-- 最大保存时间：30天 -->
             <maxHistory>30</maxHistory>
-            <!-- 文件大小超过100MB时分割 -->
-            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
-                <maxFileSize>100MB</maxFileSize>
-            </timeBasedFileNamingAndTriggeringPolicy>
+            <maxFileSize>50MB</maxFileSize>
+            <totalSizeCap>2GB</totalSizeCap>
         </rollingPolicy>
         <encoder>
-            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] [%X{traceId}] %-5level %logger{50} - %msg%n</pattern>
             <charset>UTF-8</charset>
         </encoder>
     </appender>
 
-    <!-- Error File Appender - 只记录 ERROR 级别日志 -->
+    <!-- Error File Appender - 只记录 ERROR 级别，独立滚动 -->
     <appender name="ERROR_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <file>${LOG_PATH}/${LOG_FILE}-error.log</file>
-        <filter class="ch.qos.logback.classic.filter.LevelFilter">
-            <level>ERROR</level>
-            <onMatch>ACCEPT</onMatch>
-            <onMismatch>DENY</onMismatch>
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>WARN</level>
         </filter>
-        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${LOG_PATH}/${LOG_FILE}-error.%d{yyyy-MM-dd}.log.gz</fileNamePattern>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_PATH}/${LOG_FILE}-error.%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
             <maxHistory>90</maxHistory>
+            <maxFileSize>20MB</maxFileSize>
+            <totalSizeCap>1GB</totalSizeCap>
         </rollingPolicy>
         <encoder>
-            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] [%X{traceId}] %-5level %logger{50} - %msg%n</pattern>
             <charset>UTF-8</charset>
         </encoder>
     </appender>
 
-    <!-- 开发环境配置 -->
+    <!-- 开发环境 -->
     <springProfile name="dev">
         <root level="INFO">
             <appender-ref ref="CONSOLE"/>
             <appender-ref ref="FILE"/>
             <appender-ref ref="ERROR_FILE"/>
         </root>
-        <!-- 降低特定包的日志级别 -->
         <logger name="com.elderly" level="DEBUG"/>
         <logger name="org.springframework" level="INFO"/>
         <logger name="org.mybatis" level="INFO"/>
     </springProfile>
 
-    <!-- 生产环境配置 -->
+    <!-- 生产环境 -->
     <springProfile name="prod">
         <root level="WARN">
             <appender-ref ref="FILE"/>
@@ -78,7 +69,7 @@
         <logger name="org.mybatis" level="WARN"/>
     </springProfile>
 
-    <!-- 默认配置（无环境指定时） -->
+    <!-- 默认环境 -->
     <springProfile name="!dev,!prod">
         <root level="INFO">
             <appender-ref ref="CONSOLE"/>
@@ -86,5 +77,6 @@
             <appender-ref ref="ERROR_FILE"/>
         </root>
         <logger name="com.elderly" level="DEBUG"/>
+        <logger name="org.springframework" level="INFO"/>
     </springProfile>
 </configuration>
