@@ -1,4 +1,4 @@
-# 养老服务管理系统
+# 🏥 养老服务管理系统
 
 基于 Spring Boot 3 + Vue 3 的前后端分离养老服务管理系统，提供养老院信息展示、老人入住管理、账单管理、访客管理等功能。
 
@@ -14,13 +14,13 @@
 ### 后端
 
 - **Spring Boot 3.0.2** - Web 应用框架
-- **Spring Security + JWT** - 认证授权
+- **Spring Security + JWT 0.12.5** - 认证授权
 - **MyBatis 3.0.2** - 持久层框架
 - **MySQL 8.0+** - 数据库
 - **Druid 1.2.18** - 数据库连接池
-- **Redis** - 缓存、分布式锁、接口限流
+- **Redis** - 缓存、分布式锁、接口限流、验证码存储
 - **Hutool 5.7.3** - Java 工具库
-- **JWT 0.12.5** - JSON Web Token
+- **Logback** - 日志框架（滚动策略 + 磁盘配额 + 全链路 TraceId）
 
 ### 前端
 
@@ -35,44 +35,46 @@
 
 ```
 code/
-├── elderly-care-server/      # 后端项目
-│   ├── src/
-│   │   ├── main/
-│   │   │   ├── java/
-│   │   │   │   └── com/elderly/
-│   │   │   │       ├── common/         # 通用模块
-│   │   │   │       │   ├── config/     # 配置类
-│   │   │   │       │   ├── dto/        # 数据传输对象
-│   │   │   │       │   ├── exception/  # 异常处理
-│   │   │   │       │   └── vo/         # 视图对象
-│   │   │   │       ├── controller/     # 控制器
-│   │   │   │       ├── entity/         # 实体类
-│   │   │   │       ├── mapper/         # MyBatis Mapper
-│   │   │   │       ├── service/        # 业务逻辑
-│   │   │   │       └── utils/          # 工具类
-│   │   │   └── resources/
-│   │   │       ├── mapper/             # MyBatis XML 映射文件
-│   │   │       └── application.yml     # 配置文件
-│   │   └── test/                       # 测试
+├── elderly-care-server/              # 后端项目
+│   ├── src/main/
+│   │   ├── java/com/elderly/
+│   │   │   ├── common/
+│   │   │   │   ├── annotation/       # 自定义注解（@RateLimit 等）
+│   │   │   │   ├── config/           # 配置类（Security、JWT、Redis、TraceId 等）
+│   │   │   │   ├── dto/              # 数据传输对象
+│   │   │   │   ├── enums/            # 枚举（错误码等）
+│   │   │   │   ├── exception/        # 统一异常处理
+│   │   │   │   ├── interceptor/      # 拦截器（限流、SQL注入检测）
+│   │   │   │   ├── lock/             # 分布式锁
+│   │   │   │   └── vo/               # 视图对象（统一 JSON 返回等）
+│   │   │   ├── controller/           # 控制器
+│   │   │   ├── entity/               # 实体类
+│   │   │   ├── mapper/               # MyBatis Mapper 接口
+│   │   │   ├── service/              # 业务逻辑层
+│   │   │   └── utils/                # 工具类（JWT、Redis、验证码等）
+│   │   └── resources/
+│   │       ├── mapper/               # MyBatis XML 映射文件
+│   │       ├── application.yml       # 主配置文件
+│   │       └── logback-spring.xml    # 日志配置（滚动策略 + TraceId）
 │   ├── pom.xml
-│   └── files/                          # 文件上传目录
+│   └── files/                        # 文件上传目录
 │
-└── elderly-care-vue/        # 前端项目
+└── elderly-care-vue/                # 前端项目
     ├── src/
-    │   ├── assets/          # 静态资源
-    │   ├── components/      # 公共组件
-    │   ├── layout/          # 布局组件
-    │   ├── router/          # 路由配置
-    │   ├── store/           # Vuex 状态管理
-    │   ├── utils/           # 工具函数
-    │   ├── views/           # 页面组件
-    │   │   ├── back/        # 后台管理页面
-    │   │   └── front/       # 前台展示页面
-    │   ├── App.vue
-    │   └── main.js
+    │   ├── assets/                   # 静态资源（CSS、图片）
+    │   ├── components/               # 公共组件
+    │   ├── layout/                   # 布局组件（前台/后台）
+    │   ├── router/                   # 路由配置
+    │   ├── store/                    # Vuex 状态管理
+    │   ├── utils/                    # 工具函数（axios 封装、权限、校验）
+    │   ├── views/                    # 页面组件
+    │   │   ├── back/                 # 后台管理页面
+    │   │   └── front/                # 前台展示页面
+    │   ├── App.vue                   # 根组件（含全局样式）
+    │   └── main.js                   # 入口文件
     ├── public/
     ├── package.json
-    └── vue.config.js
+    └── vue.config.js                 # Vue CLI 配置（代理到 8080）
 ```
 
 ## 🚀 快速开始
@@ -114,15 +116,19 @@ spring:
       password: your_redis_password
 ```
 
-3. 启动项目
+3. 启动后端
 
 ```bash
 cd elderly-care-server
+mvn spring-boot:run -DskipTests
+# 或编译打包后运行：
 mvn clean package -DskipTests
 java -jar target/elderly-care-server-0.0.1-SNAPSHOT.jar
 ```
 
 后端服务启动后访问：`http://localhost:8080`
+
+> **注意**：默认启动 profile 为 `default`（开发模式），日志级别为 `DEBUG`。生产环境建议指定 `--spring.profiles.active=prod`。
 
 ### 前端启动
 
@@ -133,6 +139,8 @@ npm run serve
 ```
 
 前端服务启动后访问：`http://localhost:9527`
+
+前端通过 `/api` 前缀代理请求到后端 `http://localhost:8080`，由 `vue.config.js` 配置代理转发。
 
 ## 👥 用户角色
 
@@ -193,6 +201,17 @@ npm run serve
 - **护工接口**：`/employee/**` 需要 EMPLOYEE 角色
 - **用户接口**：`/user/**` 需要 USER 或 ADMIN 或 EMPLOYEE 角色
 
+## 📝 更新日志
+
+### 2026-06-11
+- **日志管理全面优化**：修复 logback 废弃 API（`SizeAndTimeBasedFNATP` → `SizeAndTimeBasedRollingPolicy`），添加日志磁盘总量限制（`totalSizeCap`），MyBatis 日志改用 SLF4J
+- **全链路请求追踪**：新增 `TraceIdFilter`，为每个请求生成唯一 TraceId 并注入 MDC，所有日志自动携带 TraceId
+- **HTTP 请求日志**：新增 `RequestLoggingFilter`，记录每个请求的方法、URI、状态码、耗时、客户端 IP
+- **运行时日志管理 API**：新增 `LogController`，支持在线查看日志、动态调整 Logger 级别、清理归档日志
+- **请求错误处理优化**：重写 axios 拦截器，统一 HTTP 错误处理逻辑，确保后端错误信息能正确传递到前端
+- **弹窗样式修复**：修复 ElMessage 文字颜色与背景同色问题，错误弹窗红底白字清晰可见
+- **代码清理**：删除空壳测试文件、运行时日志文件、Maven 编译产物（target/），日志目录加入 `.gitignore`
+
 ## 📊 数据库
 
 项目包含以下主要数据表：
@@ -212,23 +231,6 @@ npm run serve
 - `comment` - 评论表
 - `like` - 点赞表
 - `feedback` - 反馈表
-
-## 📝 更新日志
-
-### 2026-06-09
-- **统一异常处理**：完善全局异常处理器，统一错误响应格式，添加统一错误码枚举 `ErrorCode`
-- **统一响应格式**：`JSONReturn` 添加时间戳字段，支持统一的错误码处理
-- **SQL 注入防护**：添加 `SqlInjectInterceptor` 拦截器，检测常见 SQL 注入攻击
-- **输入参数校验**：为 `LoginDto` 添加 JSR-380 验证注解，增强接口安全性
-- **Redis 缓存优化**：实现新闻浏览量统计、点赞功能缓存、验证码存储等缓存策略
-- **分布式锁支持**：基于 Redis 实现 `DistributedLock`，支持高并发场景
-- **接口限流**：基于 Redis 实现 IP 限流拦截器，防止恶意请求
-- **JWT Token 黑名单**：支持主动登出，将 Token 加入 Redis 黑名单
-
-### 2026-06-08
-- 集成 Spring Security + JWT 实现认证授权
-- 添加 Redis 缓存支持
-- 完善权限控制配置
 
 ## 📄 许可证
 
