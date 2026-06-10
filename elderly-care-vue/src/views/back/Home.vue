@@ -4,7 +4,7 @@
       <el-col :span="6">
         <div class="stat-card stat-card-1">
           <div class="stat-icon">
-            <el-icon><Users /></el-icon>
+            <i class="fa fa-users" aria-hidden="true"></i>
           </div>
           <div class="stat-info">
             <div class="stat-value">{{ stats.totalLiveNum || 0 }}</div>
@@ -15,7 +15,7 @@
       <el-col :span="6">
         <div class="stat-card stat-card-2">
           <div class="stat-icon">
-            <el-icon><Building /></el-icon>
+            <i class="fa fa-building" aria-hidden="true"></i>
           </div>
           <div class="stat-info">
             <div class="stat-value">{{ stats.totalEmployeeNum || 0 }}</div>
@@ -26,7 +26,7 @@
       <el-col :span="6">
         <div class="stat-card stat-card-3">
           <div class="stat-icon">
-            <el-icon><Bed /></el-icon>
+            <i class="fa fa-bed" aria-hidden="true"></i>
           </div>
           <div class="stat-info">
             <div class="stat-value">{{ stats.totalBedNum || 0 }}</div>
@@ -37,7 +37,7 @@
       <el-col :span="6">
         <div class="stat-card stat-card-4">
           <div class="stat-icon">
-            <el-icon><FileText /></el-icon>
+            <i class="fa fa-home" aria-hidden="true"></i>
           </div>
           <div class="stat-info">
             <div class="stat-value">{{ stats.totalRoomNum || 0 }}</div>
@@ -51,11 +51,10 @@
 
 <script>
 import { ElRow, ElCol } from 'element-plus'
-import { Users, Building, Bed, FileText } from '@element-plus/icons-vue'
 
 export default {
   name: 'Home',
-  components: { ElRow, ElCol, Users, Building, Bed, FileText },
+  components: { ElRow, ElCol },
   data() {
     return {
       stats: {

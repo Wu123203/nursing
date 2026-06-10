@@ -190,14 +190,14 @@ public class UserServiceImpl implements UserService {
     public PageVo page(Map map) {
         List<User> list = userMapper.findList(map);
         Integer total = userMapper.findTotal(map);
-        return new PageVo(total,list);
+        return new PageVo(total, list);
     }
 
     @Override
     public JSONReturn save(User user) {
         //用户名查询
         User exist = userMapper.selectByUsername(user.getUsername());
-        if(exist != null){
+        if (exist != null) {
             return JSONReturn.failed("用户名已存在，请重新输入！");
         }
         Date date = new Date();
@@ -213,11 +213,10 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public JSONReturn update(User user) {
-
         User u = userMapper.selectByPrimaryKey(user.getId());
-        if(user.getUsername() != null && !u.getUsername().equals(user.getUsername())){
+        if (user.getUsername() != null && !u.getUsername().equals(user.getUsername())) {
             User exist = userMapper.selectByUsername(user.getUsername());
-            if(exist != null){
+            if (exist != null) {
                 return JSONReturn.failed("用户名已存在，请重新输入！");
             }
         }
@@ -240,7 +239,6 @@ public class UserServiceImpl implements UserService {
     public List<User> findAll() {
         return userMapper.findAll();
     }
-
 
     @Override
     public CountVo count() {
@@ -268,9 +266,9 @@ public class UserServiceImpl implements UserService {
         for (int i = 0; i < 2; i++) {
             Integer totalNum = bedMapper.countByStatus(i);
             ChartPieVo bedVo = new ChartPieVo();
-            if(i == 0){
+            if (i == 0) {
                 bedVo.setName("空闲");
-            }else if(i == 1){
+            } else if (i == 1) {
                 bedVo.setName("占用");
             }
             bedVo.setValue(totalNum == null ? 0 : totalNum);
@@ -281,9 +279,9 @@ public class UserServiceImpl implements UserService {
         for (int i = 0; i < 2; i++) {
             Integer totalNum = liveMapper.countBySex(i);
             ChartPieVo liveVo = new ChartPieVo();
-            if(i == 0){
+            if (i == 0) {
                 liveVo.setName("男");
-            }else if(i == 1){
+            } else if (i == 1) {
                 liveVo.setName("女");
             }
             liveVo.setValue(totalNum == null ? 0 : totalNum);
@@ -292,8 +290,8 @@ public class UserServiceImpl implements UserService {
         //统计过去7天入住人数
         String[] days = DateUtils.getPast7Days();
         //统计入住人数
-        List<Integer> liveNumList =  new ArrayList<>();
-        for(String day : days){
+        List<Integer> liveNumList = new ArrayList<>();
+        for (String day : days) {
             Integer liveNum = liveMapper.countByDate(day);
             liveNumList.add(liveNum == null ? 0 : liveNum);
         }
@@ -311,5 +309,4 @@ public class UserServiceImpl implements UserService {
 
         return countVo;
     }
-
 }

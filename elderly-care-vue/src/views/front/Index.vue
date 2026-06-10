@@ -15,11 +15,11 @@
             <div class="section-card news-section">
               <div class="section-header">
                 <div class="header-left">
-                  <el-icon class="header-icon"><DocumentText /></el-icon>
+                  <i class="fa fa-file-text-o header-icon" aria-hidden="true"></i>
                   <span class="header-title">护工资讯</span>
                 </div>
                 <router-link to="/news" class="header-more">
-                  查看更多 <el-icon><ArrowRight /></el-icon>
+                  查看更多 <i class="fa fa-arrow-right" aria-hidden="true"></i>
                 </router-link>
               </div>
               
@@ -43,22 +43,22 @@
                     <p class="news-brief" v-html="item.brief"></p>
                     <div class="news-meta">
                       <span class="meta-item">
-                        <el-icon><View /></el-icon>
+                        <i class="fa fa-eye" aria-hidden="true"></i>
                         {{item.clickNum}}
                       </span>
                       <span class="meta-item">
-                        <el-icon><ChatDotSquare /></el-icon>
+                        <i class="fa fa-comments" aria-hidden="true"></i>
                         {{item.commentNum}}
                       </span>
                       <span class="meta-item">
-                        <el-icon><Clock /></el-icon>
+                        <i class="fa fa-clock-o" aria-hidden="true"></i>
                         {{dateFormat(item.createTime)}}
                       </span>
                     </div>
                   </div>
                 </div>
                 <div v-if="!newsLatestTopList || newsLatestTopList.length === 0" class="empty-state">
-                  <el-icon size="48" color="#ccc"><Document /></el-icon>
+                  <i class="fa fa-file-text-o" aria-hidden="true"></i>
                   <p>暂无护工信息</p>
                 </div>
               </div>
@@ -71,7 +71,7 @@
             <div class="section-card notice-section">
               <div class="section-header">
                 <div class="header-left">
-                  <el-icon class="header-icon"><Bell /></el-icon>
+                  <i class="fa fa-bell header-icon" aria-hidden="true"></i>
                   <span class="header-title">最新公告</span>
                 </div>
               </div>
@@ -82,7 +82,7 @@
                   :to="{path:'/notice/info',query: {id: item.id}}" 
                   class="notice-item"
                 >
-                  <el-icon class="notice-icon"><Document /></el-icon>
+                  <i class="fa fa-file-text-o notice-icon" aria-hidden="true"></i>
                   <span class="notice-title">{{item.title}}</span>
                   <span class="notice-date">{{dateFormat(item.createTime)}}</span>
                 </router-link>
@@ -95,7 +95,7 @@
             <div class="section-card hot-section">
               <div class="section-header">
                 <div class="header-left">
-                  <el-icon class="header-icon"><Hot /></el-icon>
+                  <i class="fa fa-fire header-icon" aria-hidden="true"></i>
                   <span class="header-title">热门护工</span>
                 </div>
               </div>
@@ -112,8 +112,8 @@
                     <div class="hot-card-info">
                       <h4 class="hot-card-title">{{item.title}}</h4>
                       <div class="hot-card-meta">
-                        <span><el-icon><View /></el-icon> {{item.clickNum}}</span>
-                        <span><el-icon><Clock /></el-icon> {{dateFormat(item.createTime, 'YYYY-MM-DD')}}</span>
+                        <span><i class="fa fa-eye" aria-hidden="true"></i> {{item.clickNum}}</span>
+                        <span><i class="fa fa-clock-o" aria-hidden="true"></i> {{dateFormat(item.createTime, 'YYYY-MM-DD')}}</span>
                       </div>
                     </div>
                   </router-link>
@@ -132,20 +132,10 @@
 
 <script>
 import { dateFormat } from '@/utils/utils'
-import { DocumentText, ArrowRight, Document, Bell, View, ChatDotSquare, Clock, Hot } from '@element-plus/icons-vue'
 
 export default {
   name: "Index",
-  components: {
-    DocumentText,
-    ArrowRight,
-    Document,
-    Bell,
-    View,
-    ChatDotSquare,
-    Clock,
-    Hot
-  },
+  components: {},
   data() {
     return {
       newsLatestTopList: [],
