@@ -42,6 +42,8 @@
 <script>
 import request from "@/utils/request";
 import Header from "@/layout/front/Header";
+import { ElMessage } from 'element-plus';
+
 export default {
   name: "UserRegister",
   components: {
@@ -79,22 +81,19 @@ export default {
 
     handleRegister() {
       this.$refs['form'].validate((valid) => {
-        if (valid) {
-          request.post("/user", this.form).then(res => {
-            if (res.code === 200) {
-              this.$message({
-                type: "success",
-                message: "注册成功"
-              })
-              this.$router.push("/login")
-            } else {
-              this.$message({
-                type: "error",
-                message: res.msg
-              })
-            }
-          })
-        }
+        if (!valid) return;
+
+        request.post("/user", this.form).then(res => {
+          if (res && res.code === 200) {
+            ElMessage.success(res.msg || "注册成功");
+            this.$router.push("/login");
+          } else {
+            ElMessage.error(res && res.msg ? res.msg : '注册失败');
+          }
+        }).catch(err => {
+          const msg = (err && err.msg) ? err.msg : '注册失败，请稍后重试';
+          ElMessage.error(msg);
+        })
       })
     }
   }

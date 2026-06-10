@@ -1,4 +1,5 @@
 import axios from 'axios';
+
 axios.defaults.withCredentials = true;
 
 const service = axios.create({
@@ -8,7 +9,6 @@ const service = axios.create({
 
 service.interceptors.request.use(
     config => {
-        // 从 localStorage 获取 Token
         const userJson = localStorage.getItem("user");
         if (userJson) {
             try {
@@ -23,44 +23,55 @@ service.interceptors.request.use(
         return config;
     },
     error => {
-        console.log(error);
-        return Promise.reject();
+        console.error("请求配置错误:", error);
+        return Promise.reject(error);
     }
 );
 
 service.interceptors.response.use(
     response => {
-        if (response.status === 200) {
-            return response.data;
-        } else if(response.status === 201){
-            return response;
-        } else {
-            // 如果有响应数据，即使状态码不是200也返回数据
-            if (response.data) {
-                return response.data;
-            }
-            return Promise.reject(response);
+        // 统一返回 data 中的业务数据 —— 后端统一格式 {code, msg, data, timestamp}
+        const data = response.data;
+        if (data && typeof data === 'object') {
+            return data;
         }
+        return data;
     },
     error => {
         console.error("请求错误:", error);
-        // 如果有响应数据，尝试提取错误信息
+
+        // 有 HTTP 响应（后端返回了错误）
         if (error.response) {
             const { status, data } = error.response;
-            console.error(`HTTP状态码: ${status}`);
-            console.error("响应数据:", data);
-            // 如果后端返回了JSON格式的错误信息，直接返回
-            if (data && typeof data === 'object' && (data.code !== undefined || data.msg !== undefined)) {
-                return Promise.resolve(data);
+
+            // 后端返回了 JSON 格式的错误信息
+            if (data && typeof data === 'object' && data.code !== undefined) {
+                return data;
             }
-            // 否则包装成统一格式
-            return Promise.resolve({ 
-                code: status, 
-                msg: data && data.message ? data.message : '请求失败' 
-            });
+
+            // 没有标准 JSON 响应，根据 HTTP 状态码构造错误信息
+            let msg = '请求失败';
+            switch (status) {
+                case 400: msg = '请求参数错误'; break;
+                case 401: msg = '请先登录'; break;
+                case 403: msg = '权限不足'; break;
+                case 404: msg = '接口不存在'; break;
+                case 429: msg = '请求过于频繁，请稍后再试'; break;
+                case 500: msg = '服务器内部错误'; break;
+                case 502: msg = '网关错误'; break;
+                case 503: msg = '服务暂时不可用'; break;
+                default:  msg = `请求失败(${status})`;
+            }
+            return { code: status, msg };
         }
-        // 网络错误等无响应的情况
-        return Promise.reject({ code: -1, msg: '网络异常，请稍后重试' });
+
+        // 请求超时
+        if (error.code === 'ECONNABORTED') {
+            return { code: -1, msg: '请求超时，请检查网络连接' };
+        }
+
+        // 网络断开等无响应的情况
+        return { code: -1, msg: '网络异常，请稍后重试' };
     }
 );
 

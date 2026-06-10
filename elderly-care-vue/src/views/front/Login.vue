@@ -55,6 +55,7 @@
 
 <script>
 import Header from "@/layout/front/Header";
+import { ElMessage } from 'element-plus';
 
 export default {
   name: "UserLogin",
@@ -89,74 +90,48 @@ export default {
   methods: {
     randomCode() {
       this.$http.get("/captcha/4/100/32").then(res => {
-        if (res.code === 200) {
+        if (res && res.code === 200) {
           this.url = "data:image/gif;base64," + res.data.image;
           this.form.captchaKey = res.data.captchaKey;
         } else {
-          console.error("验证码获取失败:", res.message);
+          ElMessage.error(res && res.msg ? res.msg : '验证码获取失败');
         }
       }).catch(err => {
-        console.error("验证码请求异常:", err);
+        this.showError(err, '验证码获取失败，请刷新重试');
       })
     },
-    //登录
+    // 登录
     handleLogin() {
       this.$refs['form'].validate((valid) => {
-        if (valid) {
-          console.log("登录请求数据 - username:", this.form.username);
-          console.log("登录请求数据 - password:", this.form.password);
-          console.log("登录请求数据 - role:", this.form.role);
-          console.log("登录请求数据 - captcha:", this.form.captcha);
-          console.log("登录请求数据 - captchaKey:", this.form.captchaKey);
-          console.log("完整表单数据:", JSON.stringify(this.form));
-          this.$http.post("/login", this.form).then(res => {
-            this.handleLoginResponse(res);
-          }).catch(err => {
-            console.error("登录异常:", err);
-            // 错误响应也可能包含数据，需要处理
-            if (err && typeof err === 'object') {
-              this.handleLoginResponse(err);
-            } else {
-              this.$message({
-                type: "error",
-                message: '网络异常，请稍后重试'
-              })
-            }
-            // 刷新验证码
-            this.randomCode();
-          })
-        }
+        if (!valid) return;
+
+        this.$http.post("/login", this.form).then(res => {
+          if (res && res.code === 200) {
+            ElMessage.success(res.msg || "登录成功");
+            this.$store.commit('LOGIN', res.data);
+            this.$router.push("/");
+          } else {
+            // 后端返回了业务错误码（如密码错误、账户不存在等）
+            const errorMsg = this.extractMsg(res);
+            ElMessage.error(errorMsg);
+            this.randomCode(); // 刷新验证码
+          }
+        }).catch(err => {
+          this.showError(err, '登录失败');
+          this.randomCode(); // 刷新验证码
+        })
       })
     },
-    // 处理登录响应
-    handleLoginResponse(res) {
-      console.log("登录响应数据:", res);
-      if (res && res.code === 200) {
-        this.$message({
-          type: "success",
-          message: "登录成功"
-        })
-        this.$store.commit('LOGIN', res.data)
-        this.$router.push("/")
-      } else {
-        // 处理各种错误情况
-        let errorMsg = '登录失败';
-        if (res && res.msg) {
-          errorMsg = res.msg;
-        } else if (res && res.message) {
-          errorMsg = res.message;
-        } else if (res && res.error) {
-          errorMsg = res.error;
-        } else if (res && typeof res === 'string') {
-          errorMsg = res;
-        }
-        this.$message({
-          type: "error",
-          message: errorMsg
-        })
-        // 刷新验证码
-        this.randomCode();
-      }
+    // 提取错误消息
+    extractMsg(res) {
+      if (!res) return '登录失败';
+      if (typeof res === 'string') return res;
+      return res.msg || res.message || res.error || '登录失败';
+    },
+    // 显示错误
+    showError(err, defaultMsg) {
+      const msg = this.extractMsg(err);
+      ElMessage.error(msg || defaultMsg);
     }
   }
 }

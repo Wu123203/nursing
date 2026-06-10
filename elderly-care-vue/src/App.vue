@@ -416,24 +416,56 @@
   color: #ff6b6b;
 }
 
-/* 全局消息提示样式 */
-.el-message--success {
-  background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
-  border: none;
-  border-radius: 8px;
+/* 全局消息提示样式 — 暗色渐变背景 + 白色文字，用 !important 确保覆盖 Element Plus CSS 变量 */
+.el-message {
+  border-radius: 8px !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
+  min-width: 200px !important;
 }
 
+/* ----- error: 红底白字 ----- */
 .el-message--error {
-  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a5a 100%);
-  border: none;
-  border-radius: 8px;
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a5a 100%) !important;
+  border: none !important;
+  --el-message-text-color: #fff !important;
+  --el-message-bg-color: transparent !important;
 }
+.el-message--error .el-message__content { color: #fff !important; }
+.el-message--error .el-message__icon { color: #fff !important; }
+.el-message--error .el-message__closeBtn { color: rgba(255,255,255,0.7) !important; }
+.el-message--error .el-message__closeBtn:hover { color: #fff !important; }
 
-.el-message--warning {
-  background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
-  border: none;
-  border-radius: 8px;
+/* ----- success: 绿底白字 ----- */
+.el-message--success {
+  background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%) !important;
+  border: none !important;
+  --el-message-text-color: #fff !important;
+  --el-message-bg-color: transparent !important;
 }
+.el-message--success .el-message__content { color: #fff !important; }
+.el-message--success .el-message__icon { color: #fff !important; }
+.el-message--success .el-message__closeBtn { color: rgba(255,255,255,0.7) !important; }
+.el-message--success .el-message__closeBtn:hover { color: #fff !important; }
+
+/* ----- warning: 粉黄底深字 ----- */
+.el-message--warning {
+  background: linear-gradient(135deg, #fa709a 0%, #fee140 100%) !important;
+  border: none !important;
+}
+.el-message--warning .el-message__content { color: #333 !important; }
+.el-message--warning .el-message__icon { color: #333 !important; }
+.el-message--warning .el-message__closeBtn { color: rgba(51,51,51,0.6) !important; }
+.el-message--warning .el-message__closeBtn:hover { color: #333 !important; }
+
+/* ----- info: 青粉底深字 ----- */
+.el-message--info {
+  background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%) !important;
+  border: none !important;
+}
+.el-message--info .el-message__content { color: #333 !important; }
+.el-message--info .el-message__icon { color: #333 !important; }
+.el-message--info .el-message__closeBtn { color: rgba(51,51,51,0.6) !important; }
+.el-message--info .el-message__closeBtn:hover { color: #333 !important; }
 
 /* 全局确认框样式 */
 .el-message-box {
