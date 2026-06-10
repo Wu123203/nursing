@@ -56,8 +56,8 @@ public class SecurityConfig {
                 .requestMatchers("/", "/index.html", "/static/**", "/assets/**").permitAll()
                 // 管理员接口
                 .requestMatchers("/admin/**").hasRole("ADMIN")
-                // 护工接口
-                .requestMatchers("/employee/**").hasRole("EMPLOYEE")
+                // 护工接口（管理员也可访问用于管理）
+                .requestMatchers("/employee/**").hasAnyRole("ADMIN", "EMPLOYEE")
                 // 用户接口
                 .requestMatchers("/user/**").hasAnyRole("USER", "ADMIN", "EMPLOYEE")
                 // 床位管理

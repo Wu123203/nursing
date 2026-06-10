@@ -7,8 +7,8 @@
             <el-icon><Users /></el-icon>
           </div>
           <div class="stat-info">
-            <div class="stat-value">{{ stats.userCount || 0 }}</div>
-            <div class="stat-label">用户总数</div>
+            <div class="stat-value">{{ stats.totalLiveNum || 0 }}</div>
+            <div class="stat-label">入住人数</div>
           </div>
         </div>
       </el-col>
@@ -18,8 +18,8 @@
             <el-icon><Building /></el-icon>
           </div>
           <div class="stat-info">
-            <div class="stat-value">{{ stats.restHomeCount || 0 }}</div>
-            <div class="stat-label">养老院数</div>
+            <div class="stat-value">{{ stats.totalEmployeeNum || 0 }}</div>
+            <div class="stat-label">护工总数</div>
           </div>
         </div>
       </el-col>
@@ -29,7 +29,7 @@
             <el-icon><Bed /></el-icon>
           </div>
           <div class="stat-info">
-            <div class="stat-value">{{ stats.bedCount || 0 }}</div>
+            <div class="stat-value">{{ stats.totalBedNum || 0 }}</div>
             <div class="stat-label">床位总数</div>
           </div>
         </div>
@@ -40,8 +40,8 @@
             <el-icon><FileText /></el-icon>
           </div>
           <div class="stat-info">
-            <div class="stat-value">{{ stats.newsCount || 0 }}</div>
-            <div class="stat-label">新闻总数</div>
+            <div class="stat-value">{{ stats.totalRoomNum || 0 }}</div>
+            <div class="stat-label">房间总数</div>
           </div>
         </div>
       </el-col>
@@ -59,10 +59,10 @@ export default {
   data() {
     return {
       stats: {
-        userCount: 0,
-        restHomeCount: 0,
-        bedCount: 0,
-        newsCount: 0
+        totalLiveNum: 0,
+        totalEmployeeNum: 0,
+        totalRoomNum: 0,
+        totalBedNum: 0
       }
     }
   },

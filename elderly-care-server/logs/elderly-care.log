@@ -1812,3 +1812,668 @@ Caused by: java.lang.SecurityException: 请求参数包含非法字符，请检�
 2026-06-10 02:43:40.366 [http-nio-8080-exec-3] DEBUG com.elderly.mapper.NoticeMapper.findLatestTopList - <==      Total: 1
 2026-06-10 02:43:40.368 [http-nio-8080-exec-8] DEBUG com.elderly.service.impl.NewsServiceImpl - 热点新闻列表从缓存获取: cache:news:hotlatest:5
 2026-06-10 02:43:40.382 [http-nio-8080-exec-2] DEBUG com.elderly.service.impl.NewsServiceImpl - 热点新闻列表从缓存获取: cache:news:hotclick:6
+2026-06-10 19:50:38.753 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.0.Final
+2026-06-10 19:50:38.791 [restartedMain] INFO  com.elderly.ElderlyCareServerApplication - Starting ElderlyCareServerApplication using Java 21.0.11 with PID 2520 (D:\project\code\code\elderly-care-server\target\classes started by Wu in D:\project\code\code\elderly-care-server)
+2026-06-10 19:50:38.791 [restartedMain] DEBUG com.elderly.ElderlyCareServerApplication - Running with Spring Boot v3.0.2, Spring v6.0.4
+2026-06-10 19:50:38.791 [restartedMain] INFO  com.elderly.ElderlyCareServerApplication - No active profile set, falling back to 1 default profile: "default"
+2026-06-10 19:50:38.830 [restartedMain] INFO  o.s.boot.devtools.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\15992\.m2\repository\commons-logging\commons-logging\1.0.3\commons-logging-1.0.3.jar referenced one or more files that do not exist: file:/C:/Users/15992/.m2/repository/commons-logging/commons-logging/1.0.3/log4j.jar,file:/C:/Users/15992/.m2/repository/commons-logging/commons-logging/1.0.3/log4j-core.jar
+2026-06-10 19:50:38.831 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-06-10 19:50:38.831 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-06-10 19:50:39.471 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-06-10 19:50:39.474 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-06-10 19:50:39.506 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 21 ms. Found 0 Redis repository interfaces.
+2026-06-10 19:50:40.098 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2026-06-10 19:50:40.106 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-06-10 19:50:40.108 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-06-10 19:50:40.108 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2026-06-10 19:50:40.149 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-06-10 19:50:40.150 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1318 ms
+2026-06-10 19:50:40.399 [restartedMain] DEBUG com.elderly.common.config.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-06-10 19:50:40.963 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@c13b658, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@60ef16a1, org.springframework.security.web.context.SecurityContextHolderFilter@5430a53f, org.springframework.security.web.header.HeaderWriterFilter@497cb76c, org.springframework.security.web.authentication.logout.LogoutFilter@5bfa3ddb, com.elderly.common.config.JwtAuthenticationFilter@36797a53, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@24a38648, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3ec8107e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7c869479, org.springframework.security.web.session.SessionManagementFilter@5d9ba310, org.springframework.security.web.access.ExceptionTranslationFilter@4d11aae6, org.springframework.security.web.access.intercept.AuthorizationFilter@3b1af15a]
+2026-06-10 19:50:41.290 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2026-06-10 19:50:41.306 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-06-10 19:50:41.395 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2026-06-10 19:50:41.403 [restartedMain] INFO  com.elderly.ElderlyCareServerApplication - Started ElderlyCareServerApplication in 3.037 seconds (process running for 3.484)
+2026-06-10 19:51:53.944 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-10 19:51:53.945 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-06-10 19:51:53.946 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-06-10 19:51:54.263 [http-nio-8080-exec-3] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2026-06-10 19:51:54.477 [http-nio-8080-exec-3] DEBUG com.elderly.mapper.NoticeMapper.findLatestTopList - ==>  Preparing: select * from t_notice order by id desc limit ?;
+2026-06-10 19:51:54.500 [http-nio-8080-exec-3] DEBUG com.elderly.mapper.NoticeMapper.findLatestTopList - ==> Parameters: 5(Integer)
+2026-06-10 19:51:54.523 [http-nio-8080-exec-3] DEBUG com.elderly.mapper.NoticeMapper.findLatestTopList - <==      Total: 1
+2026-06-10 19:51:55.294 [http-nio-8080-exec-4] DEBUG com.elderly.mapper.NewsMapper.findLatestTopList - ==>  Preparing: select * from t_news order by create_time desc limit ?;
+2026-06-10 19:51:55.296 [http-nio-8080-exec-4] DEBUG com.elderly.mapper.NewsMapper.findLatestTopList - ==> Parameters: 5(Integer)
+2026-06-10 19:51:55.304 [http-nio-8080-exec-4] DEBUG com.elderly.mapper.NewsMapper.findLatestTopList - <==      Total: 5
+2026-06-10 19:51:55.308 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.NewsMapper.findClickTopList - ==>  Preparing: select * from t_news order by click_num desc limit ?;
+2026-06-10 19:51:55.308 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.NewsMapper.findClickTopList - ==> Parameters: 6(Integer)
+2026-06-10 19:51:55.311 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.NewsMapper.findClickTopList - <==      Total: 5
+2026-06-10 19:52:00.661 [http-nio-8080-exec-7] DEBUG com.elderly.controller.HomeController - 验证码已存入 Redis: key=captcha:3509f2894bd64f7d89e79a5630d5ca62, code=YwNf
+2026-06-10 19:52:20.998 [http-nio-8080-exec-5] INFO  com.elderly.service.impl.UserServiceImpl - 用户登录尝试: username=admin, role=0
+2026-06-10 19:52:21.031 [http-nio-8080-exec-5] DEBUG com.elderly.mapper.AdminMapper.selectByUsername - ==>  Preparing: select * from t_admin where username = ?;
+2026-06-10 19:52:21.035 [http-nio-8080-exec-5] DEBUG com.elderly.mapper.AdminMapper.selectByUsername - ==> Parameters: admin(String)
+2026-06-10 19:52:21.042 [http-nio-8080-exec-5] DEBUG com.elderly.mapper.AdminMapper.selectByUsername - <==      Total: 1
+2026-06-10 19:52:21.162 [http-nio-8080-exec-5] INFO  com.elderly.service.impl.UserServiceImpl - 用户登录成功: username=admin, role=ADMIN, userId=1
+2026-06-10 19:52:21.318 [http-nio-8080-exec-6] DEBUG com.elderly.service.impl.NewsServiceImpl - 热点新闻列表从缓存获取: cache:news:hotlatest:5
+2026-06-10 19:52:21.561 [http-nio-8080-exec-10] DEBUG com.elderly.mapper.NoticeMapper.findLatestTopList - ==>  Preparing: select * from t_notice order by id desc limit ?;
+2026-06-10 19:52:21.562 [http-nio-8080-exec-10] DEBUG com.elderly.mapper.NoticeMapper.findLatestTopList - ==> Parameters: 5(Integer)
+2026-06-10 19:52:21.566 [http-nio-8080-exec-10] DEBUG com.elderly.mapper.NoticeMapper.findLatestTopList - <==      Total: 1
+2026-06-10 19:52:21.573 [http-nio-8080-exec-9] DEBUG com.elderly.service.impl.NewsServiceImpl - 热点新闻列表从缓存获取: cache:news:hotclick:6
+2026-06-10 19:52:24.817 [http-nio-8080-exec-8] DEBUG com.elderly.service.impl.UserServiceImpl - 统计数据从数据库获取
+2026-06-10 19:52:24.818 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.EmployeeMapper.countTotal - ==>  Preparing: select count(id) from t_employee;
+2026-06-10 19:52:24.818 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.EmployeeMapper.countTotal - ==> Parameters: 
+2026-06-10 19:52:24.825 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.EmployeeMapper.countTotal - <==      Total: 1
+2026-06-10 19:52:24.826 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.LiveMapper.countTotal - ==>  Preparing: select count(id) from t_live where status = 0;
+2026-06-10 19:52:24.827 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.LiveMapper.countTotal - ==> Parameters: 
+2026-06-10 19:52:24.829 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.LiveMapper.countTotal - <==      Total: 1
+2026-06-10 19:52:24.831 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.RoomMapper.countTotal - ==>  Preparing: select count(id) from t_room;
+2026-06-10 19:52:24.831 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.RoomMapper.countTotal - ==> Parameters: 
+2026-06-10 19:52:24.836 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.RoomMapper.countTotal - <==      Total: 1
+2026-06-10 19:52:24.838 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.BedMapper.countTotal - ==>  Preparing: select count(id) from t_bed;
+2026-06-10 19:52:24.838 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.BedMapper.countTotal - ==> Parameters: 
+2026-06-10 19:52:24.842 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.BedMapper.countTotal - <==      Total: 1
+2026-06-10 19:52:24.843 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.BedMapper.countByStatus - ==>  Preparing: select count(id) from t_bed where status = ?;
+2026-06-10 19:52:24.843 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.BedMapper.countByStatus - ==> Parameters: 0(Integer)
+2026-06-10 19:52:24.844 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.BedMapper.countByStatus - <==      Total: 1
+2026-06-10 19:52:24.846 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.BedMapper.countByStatus - ==>  Preparing: select count(id) from t_bed where status = ?;
+2026-06-10 19:52:24.847 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.BedMapper.countByStatus - ==> Parameters: 1(Integer)
+2026-06-10 19:52:24.848 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.BedMapper.countByStatus - <==      Total: 1
+2026-06-10 19:52:24.850 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.LiveMapper.countBySex - ==>  Preparing: select count(id) from t_live where status = 0 and sex = ?;
+2026-06-10 19:52:24.850 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.LiveMapper.countBySex - ==> Parameters: 0(Integer)
+2026-06-10 19:52:24.853 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.LiveMapper.countBySex - <==      Total: 1
+2026-06-10 19:52:24.854 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.LiveMapper.countBySex - ==>  Preparing: select count(id) from t_live where status = 0 and sex = ?;
+2026-06-10 19:52:24.855 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.LiveMapper.countBySex - ==> Parameters: 1(Integer)
+2026-06-10 19:52:24.856 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.LiveMapper.countBySex - <==      Total: 1
+2026-06-10 19:52:24.865 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.LiveMapper.countByDate - ==>  Preparing: select count(id) from t_live where status = 0 and begin_time = ?
+2026-06-10 19:52:24.865 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.LiveMapper.countByDate - ==> Parameters: 2026-06-04(String)
+2026-06-10 19:52:24.867 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.LiveMapper.countByDate - <==      Total: 1
+2026-06-10 19:52:24.867 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.LiveMapper.countByDate - ==>  Preparing: select count(id) from t_live where status = 0 and begin_time = ?
+2026-06-10 19:52:24.868 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.LiveMapper.countByDate - ==> Parameters: 2026-06-05(String)
+2026-06-10 19:52:24.868 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.LiveMapper.countByDate - <==      Total: 1
+2026-06-10 19:52:24.869 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.LiveMapper.countByDate - ==>  Preparing: select count(id) from t_live where status = 0 and begin_time = ?
+2026-06-10 19:52:24.869 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.LiveMapper.countByDate - ==> Parameters: 2026-06-06(String)
+2026-06-10 19:52:24.870 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.LiveMapper.countByDate - <==      Total: 1
+2026-06-10 19:52:24.871 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.LiveMapper.countByDate - ==>  Preparing: select count(id) from t_live where status = 0 and begin_time = ?
+2026-06-10 19:52:24.872 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.LiveMapper.countByDate - ==> Parameters: 2026-06-07(String)
+2026-06-10 19:52:24.874 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.LiveMapper.countByDate - <==      Total: 1
+2026-06-10 19:52:24.874 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.LiveMapper.countByDate - ==>  Preparing: select count(id) from t_live where status = 0 and begin_time = ?
+2026-06-10 19:52:24.874 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.LiveMapper.countByDate - ==> Parameters: 2026-06-08(String)
+2026-06-10 19:52:24.875 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.LiveMapper.countByDate - <==      Total: 1
+2026-06-10 19:52:24.877 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.LiveMapper.countByDate - ==>  Preparing: select count(id) from t_live where status = 0 and begin_time = ?
+2026-06-10 19:52:24.878 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.LiveMapper.countByDate - ==> Parameters: 2026-06-09(String)
+2026-06-10 19:52:24.878 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.LiveMapper.countByDate - <==      Total: 1
+2026-06-10 19:52:24.879 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.LiveMapper.countByDate - ==>  Preparing: select count(id) from t_live where status = 0 and begin_time = ?
+2026-06-10 19:52:24.880 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.LiveMapper.countByDate - ==> Parameters: 2026-06-10(String)
+2026-06-10 19:52:24.881 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.LiveMapper.countByDate - <==      Total: 1
+2026-06-10 19:52:31.185 [http-nio-8080-exec-3] DEBUG com.elderly.mapper.RoomMapper.findList - ==>  Preparing: select * from t_room order by create_time desc limit ?,?;
+2026-06-10 19:52:31.186 [http-nio-8080-exec-3] DEBUG com.elderly.mapper.RoomMapper.findList - ==> Parameters: 0(Integer), 10(Integer)
+2026-06-10 19:52:31.189 [http-nio-8080-exec-3] DEBUG com.elderly.mapper.RoomMapper.findList - <==      Total: 4
+2026-06-10 19:52:31.190 [http-nio-8080-exec-3] DEBUG com.elderly.mapper.RoomMapper.findTotal - ==>  Preparing: select count(id) from t_room
+2026-06-10 19:52:31.190 [http-nio-8080-exec-3] DEBUG com.elderly.mapper.RoomMapper.findTotal - ==> Parameters: 
+2026-06-10 19:52:31.194 [http-nio-8080-exec-3] DEBUG com.elderly.mapper.RoomMapper.findTotal - <==      Total: 1
+2026-06-10 19:52:33.696 [http-nio-8080-exec-4] DEBUG com.elderly.mapper.UserMapper.findList - ==>  Preparing: select * from t_user order by create_time desc limit ?,?;
+2026-06-10 19:52:33.697 [http-nio-8080-exec-4] DEBUG com.elderly.mapper.UserMapper.findList - ==> Parameters: 0(Integer), 10(Integer)
+2026-06-10 19:52:33.704 [http-nio-8080-exec-4] DEBUG com.elderly.mapper.UserMapper.findList - <==      Total: 5
+2026-06-10 19:52:33.706 [http-nio-8080-exec-4] DEBUG com.elderly.mapper.UserMapper.findTotal - ==>  Preparing: select count(id) from t_user
+2026-06-10 19:52:33.707 [http-nio-8080-exec-4] DEBUG com.elderly.mapper.UserMapper.findTotal - ==> Parameters: 
+2026-06-10 19:52:33.710 [http-nio-8080-exec-4] DEBUG com.elderly.mapper.UserMapper.findTotal - <==      Total: 1
+2026-06-10 19:52:43.663 [http-nio-8080-exec-5] DEBUG c.elderly.mapper.ResthomeMapper.selectByPrimaryKey - ==>  Preparing: select id , title, begin_time, end_time, phone, address, cover, brief, content, click_num, create_time, update_time from t_resthome where id = ?
+2026-06-10 19:52:43.664 [http-nio-8080-exec-5] DEBUG c.elderly.mapper.ResthomeMapper.selectByPrimaryKey - ==> Parameters: 1(Integer)
+2026-06-10 19:52:43.668 [http-nio-8080-exec-5] DEBUG c.elderly.mapper.ResthomeMapper.selectByPrimaryKey - <==      Total: 1
+2026-06-10 19:52:44.273 [http-nio-8080-exec-6] DEBUG com.elderly.mapper.NoticeMapper.findList - ==>  Preparing: select * from t_notice order by create_time desc limit ?,?;
+2026-06-10 19:52:44.274 [http-nio-8080-exec-6] DEBUG com.elderly.mapper.NoticeMapper.findList - ==> Parameters: 0(Integer), 10(Integer)
+2026-06-10 19:52:44.276 [http-nio-8080-exec-6] DEBUG com.elderly.mapper.NoticeMapper.findList - <==      Total: 1
+2026-06-10 19:52:44.277 [http-nio-8080-exec-6] DEBUG com.elderly.mapper.NoticeMapper.findTotal - ==>  Preparing: select count(id) from t_notice
+2026-06-10 19:52:44.277 [http-nio-8080-exec-6] DEBUG com.elderly.mapper.NoticeMapper.findTotal - ==> Parameters: 
+2026-06-10 19:52:44.281 [http-nio-8080-exec-6] DEBUG com.elderly.mapper.NoticeMapper.findTotal - <==      Total: 1
+2026-06-10 19:52:45.432 [http-nio-8080-exec-10] DEBUG com.elderly.mapper.FeedbackMapper.findList - ==>  Preparing: select a.*,b.nickname,b.avatar from t_feedback a inner join t_user b on a.user_id = b.id order by a.create_time desc limit ?,?;
+2026-06-10 19:52:45.434 [http-nio-8080-exec-10] DEBUG com.elderly.mapper.FeedbackMapper.findList - ==> Parameters: 0(Integer), 10(Integer)
+2026-06-10 19:52:45.444 [http-nio-8080-exec-10] DEBUG com.elderly.mapper.FeedbackMapper.findList - <==      Total: 7
+2026-06-10 19:52:45.445 [http-nio-8080-exec-10] DEBUG com.elderly.mapper.FeedbackMapper.findTotal - ==>  Preparing: select count(a.id) from t_feedback a inner join t_user b on a.user_id = b.id
+2026-06-10 19:52:45.446 [http-nio-8080-exec-10] DEBUG com.elderly.mapper.FeedbackMapper.findTotal - ==> Parameters: 
+2026-06-10 19:52:45.447 [http-nio-8080-exec-10] DEBUG com.elderly.mapper.FeedbackMapper.findTotal - <==      Total: 1
+2026-06-10 19:52:47.591 [http-nio-8080-exec-9] DEBUG com.elderly.mapper.NewsMapper.findList - ==>  Preparing: select * from t_news order by create_time desc limit ?,?;
+2026-06-10 19:52:47.592 [http-nio-8080-exec-9] DEBUG com.elderly.mapper.NewsMapper.findList - ==> Parameters: 0(Integer), 10(Integer)
+2026-06-10 19:52:47.595 [http-nio-8080-exec-9] DEBUG com.elderly.mapper.NewsMapper.findList - <==      Total: 5
+2026-06-10 19:52:47.596 [http-nio-8080-exec-9] DEBUG com.elderly.mapper.NewsMapper.findTotal - ==>  Preparing: select count(id) from t_news
+2026-06-10 19:52:47.596 [http-nio-8080-exec-9] DEBUG com.elderly.mapper.NewsMapper.findTotal - ==> Parameters: 
+2026-06-10 19:52:47.601 [http-nio-8080-exec-9] DEBUG com.elderly.mapper.NewsMapper.findTotal - <==      Total: 1
+2026-06-10 19:52:48.105 [http-nio-8080-exec-2] DEBUG com.elderly.mapper.CommentMapper.findList - ==>  Preparing: select a.id,a.content,a.news_id,a.create_time, case when a.pid =0 then 0 else 1 end as type, b.avatar,b.nickname, d.nickname as be_reply_name, e.title from t_comment a inner join t_user b on a.user_id = b.id left join t_comment c on a.pid = c.id left join t_user d on c.user_id = d.id inner join t_news e on a.news_id = e.id order by a.create_time desc limit ?,?;
+2026-06-10 19:52:48.105 [http-nio-8080-exec-2] DEBUG com.elderly.mapper.CommentMapper.findList - ==> Parameters: 0(Integer), 10(Integer)
+2026-06-10 19:52:48.112 [http-nio-8080-exec-2] DEBUG com.elderly.mapper.CommentMapper.findList - <==      Total: 6
+2026-06-10 19:52:48.115 [http-nio-8080-exec-2] DEBUG com.elderly.mapper.CommentMapper.findTotal - ==>  Preparing: select count(a.id) from t_comment a inner join t_user b on a.user_id = b.id left join t_comment c on a.pid = c.id left join t_user d on c.user_id = d.id inner join t_news e on a.news_id = e.id
+2026-06-10 19:52:48.116 [http-nio-8080-exec-2] DEBUG com.elderly.mapper.CommentMapper.findTotal - ==> Parameters: 
+2026-06-10 19:52:48.118 [http-nio-8080-exec-2] DEBUG com.elderly.mapper.CommentMapper.findTotal - <==      Total: 1
+2026-06-10 19:52:49.331 [http-nio-8080-exec-3] DEBUG com.elderly.mapper.BillMapper.findList - ==>  Preparing: select a.*, b.bed_id,b.name, c.bed_no,c.room_id, d.room_name from t_bill a inner join t_live b on a.live_id = b.id inner join t_bed c on b.bed_id = c.id inner join t_room d on c.room_id = d.id order by a.create_time desc limit ?,?;
+2026-06-10 19:52:49.332 [http-nio-8080-exec-3] DEBUG com.elderly.mapper.BillMapper.findList - ==> Parameters: 0(Integer), 10(Integer)
+2026-06-10 19:52:49.334 [http-nio-8080-exec-3] DEBUG com.elderly.mapper.BillMapper.findList - <==      Total: 4
+2026-06-10 19:52:49.336 [http-nio-8080-exec-3] DEBUG com.elderly.mapper.BillMapper.findTotal - ==>  Preparing: select count(a.id) from t_bill a inner join t_live b on a.live_id = b.id inner join t_bed c on b.bed_id = c.id inner join t_room d on c.room_id = d.id
+2026-06-10 19:52:49.336 [http-nio-8080-exec-3] DEBUG com.elderly.mapper.BillMapper.findTotal - ==> Parameters: 
+2026-06-10 19:52:49.337 [http-nio-8080-exec-3] DEBUG com.elderly.mapper.BillMapper.findTotal - <==      Total: 1
+2026-06-10 19:52:49.553 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.RoomMapper.findAll - ==>  Preparing: select * from t_room order by create_time asc;
+2026-06-10 19:52:49.553 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.RoomMapper.findAll - ==> Parameters: 
+2026-06-10 19:52:49.556 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.RoomMapper.findAll - <==      Total: 4
+2026-06-10 19:52:50.035 [http-nio-8080-exec-4] DEBUG com.elderly.mapper.LeaveMapper.findList - ==>  Preparing: select a.*, b.bed_id,b.name, c.bed_no,c.room_id, d.room_name from t_leave a inner join t_live b on a.live_id = b.id inner join t_bed c on b.bed_id = c.id inner join t_room d on c.room_id = d.id order by a.create_time desc limit ?,?;
+2026-06-10 19:52:50.036 [http-nio-8080-exec-4] DEBUG com.elderly.mapper.LeaveMapper.findList - ==> Parameters: 0(Integer), 5(Integer)
+2026-06-10 19:52:50.039 [http-nio-8080-exec-4] DEBUG com.elderly.mapper.LeaveMapper.findList - <==      Total: 2
+2026-06-10 19:52:50.040 [http-nio-8080-exec-4] DEBUG com.elderly.mapper.LeaveMapper.findTotal - ==>  Preparing: select count(a.id) from t_leave a inner join t_live b on a.live_id = b.id inner join t_bed c on b.bed_id = c.id inner join t_room d on c.room_id = d.id
+2026-06-10 19:52:50.041 [http-nio-8080-exec-4] DEBUG com.elderly.mapper.LeaveMapper.findTotal - ==> Parameters: 
+2026-06-10 19:52:50.043 [http-nio-8080-exec-4] DEBUG com.elderly.mapper.LeaveMapper.findTotal - <==      Total: 1
+2026-06-10 19:52:51.084 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.VisitMapper.findList - ==>  Preparing: select a.*, b.bed_id,b.name, c.bed_no,c.room_id, d.room_name from t_visit a inner join t_live b on a.live_id = b.id inner join t_bed c on b.bed_id = c.id inner join t_room d on c.room_id = d.id order by a.create_time desc limit ?,?;
+2026-06-10 19:52:51.085 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.VisitMapper.findList - ==> Parameters: 0(Integer), 10(Integer)
+2026-06-10 19:52:51.088 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.VisitMapper.findList - <==      Total: 2
+2026-06-10 19:52:51.089 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.VisitMapper.findTotal - ==>  Preparing: select count(a.id) from t_visit a inner join t_live b on a.live_id = b.id inner join t_bed c on b.bed_id = c.id inner join t_room d on c.room_id = d.id
+2026-06-10 19:52:51.090 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.VisitMapper.findTotal - ==> Parameters: 
+2026-06-10 19:52:51.092 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.VisitMapper.findTotal - <==      Total: 1
+2026-06-10 19:52:51.299 [http-nio-8080-exec-5] DEBUG com.elderly.mapper.RoomMapper.findAll - ==>  Preparing: select * from t_room order by create_time asc;
+2026-06-10 19:52:51.300 [http-nio-8080-exec-5] DEBUG com.elderly.mapper.RoomMapper.findAll - ==> Parameters: 
+2026-06-10 19:52:51.301 [http-nio-8080-exec-5] DEBUG com.elderly.mapper.RoomMapper.findAll - <==      Total: 4
+2026-06-10 19:52:51.830 [http-nio-8080-exec-6] DEBUG com.elderly.mapper.LiveMapper.findList - ==>  Preparing: select a.*, b.bed_no,b.room_id, c.room_name from t_live a inner join t_bed b on a.bed_id = b.id inner join t_room c on b.room_id = c.id order by a.create_time desc limit ?,?;
+2026-06-10 19:52:51.831 [http-nio-8080-exec-6] DEBUG com.elderly.mapper.LiveMapper.findList - ==> Parameters: 0(Integer), 10(Integer)
+2026-06-10 19:52:51.835 [http-nio-8080-exec-6] DEBUG com.elderly.mapper.LiveMapper.findList - <==      Total: 7
+2026-06-10 19:52:51.836 [http-nio-8080-exec-6] DEBUG com.elderly.mapper.LiveMapper.findTotal - ==>  Preparing: select count(a.id) from t_live a inner join t_bed b on a.bed_id = b.id inner join t_room c on b.room_id = c.id
+2026-06-10 19:52:51.836 [http-nio-8080-exec-6] DEBUG com.elderly.mapper.LiveMapper.findTotal - ==> Parameters: 
+2026-06-10 19:52:51.838 [http-nio-8080-exec-6] DEBUG com.elderly.mapper.LiveMapper.findTotal - <==      Total: 1
+2026-06-10 19:52:52.157 [http-nio-8080-exec-9] DEBUG com.elderly.mapper.RoomMapper.findAll - ==>  Preparing: select * from t_room order by create_time asc;
+2026-06-10 19:52:52.157 [http-nio-8080-exec-9] DEBUG com.elderly.mapper.RoomMapper.findAll - ==> Parameters: 
+2026-06-10 19:52:52.159 [http-nio-8080-exec-10] DEBUG com.elderly.mapper.UserMapper.findAll - ==>  Preparing: select * from t_user order by id asc;
+2026-06-10 19:52:52.159 [http-nio-8080-exec-10] DEBUG com.elderly.mapper.UserMapper.findAll - ==> Parameters: 
+2026-06-10 19:52:52.162 [http-nio-8080-exec-9] DEBUG com.elderly.mapper.RoomMapper.findAll - <==      Total: 4
+2026-06-10 19:52:52.175 [http-nio-8080-exec-10] DEBUG com.elderly.mapper.UserMapper.findAll - <==      Total: 5
+2026-06-10 19:52:53.827 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.RoomMapper.findList - ==>  Preparing: select * from t_room order by create_time desc limit ?,?;
+2026-06-10 19:52:53.829 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.RoomMapper.findList - ==> Parameters: 0(Integer), 10(Integer)
+2026-06-10 19:52:53.831 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.RoomMapper.findList - <==      Total: 4
+2026-06-10 19:52:53.833 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.RoomMapper.findTotal - ==>  Preparing: select count(id) from t_room
+2026-06-10 19:52:53.833 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.RoomMapper.findTotal - ==> Parameters: 
+2026-06-10 19:52:53.840 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.RoomMapper.findTotal - <==      Total: 1
+2026-06-10 19:52:54.380 [http-nio-8080-exec-2] DEBUG com.elderly.mapper.BedMapper.findList - ==>  Preparing: select a.*, b.room_name from t_bed a inner join t_room b on a.room_id = b.id order by a.create_time desc limit ?,?;
+2026-06-10 19:52:54.381 [http-nio-8080-exec-2] DEBUG com.elderly.mapper.BedMapper.findList - ==> Parameters: 0(Integer), 10(Integer)
+2026-06-10 19:52:54.388 [http-nio-8080-exec-2] DEBUG com.elderly.mapper.BedMapper.findList - <==      Total: 10
+2026-06-10 19:52:54.389 [http-nio-8080-exec-2] DEBUG com.elderly.mapper.BedMapper.findTotal - ==>  Preparing: select count(a.id) from t_bed a inner join t_room b on a.room_id = b.id
+2026-06-10 19:52:54.389 [http-nio-8080-exec-2] DEBUG com.elderly.mapper.BedMapper.findTotal - ==> Parameters: 
+2026-06-10 19:52:54.390 [http-nio-8080-exec-2] DEBUG com.elderly.mapper.BedMapper.findTotal - <==      Total: 1
+2026-06-10 19:52:54.689 [http-nio-8080-exec-3] DEBUG com.elderly.mapper.RoomMapper.findAll - ==>  Preparing: select * from t_room order by create_time asc;
+2026-06-10 19:52:54.690 [http-nio-8080-exec-3] DEBUG com.elderly.mapper.RoomMapper.findAll - ==> Parameters: 
+2026-06-10 19:52:54.691 [http-nio-8080-exec-3] DEBUG com.elderly.mapper.RoomMapper.findAll - <==      Total: 4
+2026-06-10 19:52:55.764 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.UserMapper.findList - ==>  Preparing: select * from t_user order by create_time desc limit ?,?;
+2026-06-10 19:52:55.765 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.UserMapper.findList - ==> Parameters: 0(Integer), 10(Integer)
+2026-06-10 19:52:55.767 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.UserMapper.findList - <==      Total: 5
+2026-06-10 19:52:55.768 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.UserMapper.findTotal - ==>  Preparing: select count(id) from t_user
+2026-06-10 19:52:55.769 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.UserMapper.findTotal - ==> Parameters: 
+2026-06-10 19:52:55.772 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.UserMapper.findTotal - <==      Total: 1
+2026-06-10 19:53:57.723 [http-nio-8080-exec-4] DEBUG com.elderly.utils.JwtUtil - Token 验证失败: Token 无效
+2026-06-10 19:54:08.987 [http-nio-8080-exec-5] DEBUG com.elderly.controller.HomeController - 验证码已存入 Redis: key=captcha:7a685ec7bcf2426f95d7c6d4e8fd6fd4, code=YQGY
+2026-06-10 19:54:32.842 [http-nio-8080-exec-9] INFO  com.elderly.service.impl.UserServiceImpl - 用户登录尝试: username=admin, role=0
+2026-06-10 19:54:32.852 [http-nio-8080-exec-9] DEBUG com.elderly.mapper.AdminMapper.selectByUsername - ==>  Preparing: select * from t_admin where username = ?;
+2026-06-10 19:54:32.853 [http-nio-8080-exec-9] DEBUG com.elderly.mapper.AdminMapper.selectByUsername - ==> Parameters: admin(String)
+2026-06-10 19:54:32.853 [http-nio-8080-exec-9] DEBUG com.elderly.mapper.AdminMapper.selectByUsername - <==      Total: 1
+2026-06-10 19:54:32.857 [http-nio-8080-exec-9] WARN  com.elderly.service.impl.UserServiceImpl - 用户登录失败: username=admin, reason=密码错误, role=ADMIN
+2026-06-10 19:55:04.435 [http-nio-8080-exec-8] INFO  com.elderly.service.impl.UserServiceImpl - 用户登录尝试: username=admin, role=0
+2026-06-10 19:55:04.436 [http-nio-8080-exec-8] WARN  com.elderly.service.impl.UserServiceImpl - 用户登录失败: username=admin, reason=验证码已过期
+2026-06-10 19:55:18.646 [http-nio-8080-exec-3] DEBUG com.elderly.controller.HomeController - 验证码已存入 Redis: key=captcha:4b6960df53b44ad388952b18699988b1, code=aM95
+2026-06-10 19:55:31.718 [http-nio-8080-exec-4] INFO  com.elderly.service.impl.UserServiceImpl - 用户登录尝试: username=admin, role=0
+2026-06-10 19:55:31.724 [http-nio-8080-exec-4] DEBUG com.elderly.mapper.AdminMapper.selectByUsername - ==>  Preparing: select * from t_admin where username = ?;
+2026-06-10 19:55:31.724 [http-nio-8080-exec-4] DEBUG com.elderly.mapper.AdminMapper.selectByUsername - ==> Parameters: admin(String)
+2026-06-10 19:55:31.724 [http-nio-8080-exec-4] DEBUG com.elderly.mapper.AdminMapper.selectByUsername - <==      Total: 1
+2026-06-10 19:55:31.728 [http-nio-8080-exec-4] INFO  com.elderly.service.impl.UserServiceImpl - 用户登录成功: username=admin, role=ADMIN, userId=1
+2026-06-10 19:57:05.403 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.0.Final
+2026-06-10 19:57:05.430 [restartedMain] INFO  com.elderly.ElderlyCareServerApplication - Starting ElderlyCareServerApplication using Java 21.0.11 with PID 17200 (D:\project\code\code\elderly-care-server\target\classes started by Wu in D:\project\code\code\elderly-care-server)
+2026-06-10 19:57:05.430 [restartedMain] DEBUG com.elderly.ElderlyCareServerApplication - Running with Spring Boot v3.0.2, Spring v6.0.4
+2026-06-10 19:57:05.430 [restartedMain] INFO  com.elderly.ElderlyCareServerApplication - No active profile set, falling back to 1 default profile: "default"
+2026-06-10 19:57:05.461 [restartedMain] INFO  o.s.boot.devtools.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\15992\.m2\repository\commons-logging\commons-logging\1.0.3\commons-logging-1.0.3.jar referenced one or more files that do not exist: file:/C:/Users/15992/.m2/repository/commons-logging/commons-logging/1.0.3/log4j.jar,file:/C:/Users/15992/.m2/repository/commons-logging/commons-logging/1.0.3/log4j-core.jar
+2026-06-10 19:57:05.461 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-06-10 19:57:05.462 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-06-10 19:57:05.951 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-06-10 19:57:05.952 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-06-10 19:57:05.983 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 19 ms. Found 0 Redis repository interfaces.
+2026-06-10 19:57:06.401 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2026-06-10 19:57:06.408 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-06-10 19:57:06.408 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-06-10 19:57:06.409 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2026-06-10 19:57:06.444 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-06-10 19:57:06.445 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 982 ms
+2026-06-10 19:57:06.633 [restartedMain] DEBUG com.elderly.common.config.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-06-10 19:57:07.088 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@42727b94, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@39182d2, org.springframework.security.web.context.SecurityContextHolderFilter@1172f0d5, org.springframework.security.web.header.HeaderWriterFilter@2b6099aa, org.springframework.security.web.authentication.logout.LogoutFilter@33d00fd0, com.elderly.common.config.JwtAuthenticationFilter@737e133b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@9da01e7, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@438dca4c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@76dfbbd0, org.springframework.security.web.session.SessionManagementFilter@6bd028ad, org.springframework.security.web.access.ExceptionTranslationFilter@2a08191a, org.springframework.security.web.access.intercept.AuthorizationFilter@25fc9bcb]
+2026-06-10 19:57:07.273 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2026-06-10 19:57:07.281 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-06-10 19:57:07.366 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2026-06-10 19:57:07.373 [restartedMain] INFO  com.elderly.ElderlyCareServerApplication - Started ElderlyCareServerApplication in 2.272 seconds (process running for 2.587)
+2026-06-10 19:57:19.315 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-10 19:57:19.316 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-06-10 19:57:19.319 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-06-10 19:57:21.462 [http-nio-8080-exec-1] DEBUG com.elderly.controller.HomeController - 验证码已存入 Redis: key=captcha:6a9d0d87970a495fab0875815a64729b, code=8pMs
+2026-06-10 19:57:32.857 [http-nio-8080-exec-3] INFO  com.elderly.service.impl.UserServiceImpl - 用户登录尝试: username=admin, role=0
+2026-06-10 19:57:33.069 [http-nio-8080-exec-3] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2026-06-10 19:57:33.246 [http-nio-8080-exec-3] DEBUG com.elderly.mapper.AdminMapper.selectByUsername - ==>  Preparing: select * from t_admin where username = ?;
+2026-06-10 19:57:33.267 [http-nio-8080-exec-3] DEBUG com.elderly.mapper.AdminMapper.selectByUsername - ==> Parameters: admin(String)
+2026-06-10 19:57:33.289 [http-nio-8080-exec-3] DEBUG com.elderly.mapper.AdminMapper.selectByUsername - <==      Total: 1
+2026-06-10 19:57:33.384 [http-nio-8080-exec-3] INFO  com.elderly.service.impl.UserServiceImpl - 用户登录成功: username=admin, role=ADMIN, userId=1
+2026-06-10 19:57:47.435 [http-nio-8080-exec-5] DEBUG com.elderly.mapper.EmployeeMapper.findList - ==>  Preparing: select * from t_employee order by create_time desc limit ?,?;
+2026-06-10 19:57:47.437 [http-nio-8080-exec-5] DEBUG com.elderly.mapper.EmployeeMapper.findList - ==> Parameters: 0(Integer), 10(Integer)
+2026-06-10 19:57:47.442 [http-nio-8080-exec-5] DEBUG com.elderly.mapper.EmployeeMapper.findList - <==      Total: 5
+2026-06-10 19:57:47.443 [http-nio-8080-exec-5] DEBUG com.elderly.mapper.EmployeeMapper.findTotal - ==>  Preparing: select count(id) from t_employee
+2026-06-10 19:57:47.443 [http-nio-8080-exec-5] DEBUG com.elderly.mapper.EmployeeMapper.findTotal - ==> Parameters: 
+2026-06-10 19:57:47.447 [http-nio-8080-exec-5] DEBUG com.elderly.mapper.EmployeeMapper.findTotal - <==      Total: 1
+2026-06-10 19:57:53.814 [http-nio-8080-exec-9] DEBUG com.elderly.mapper.UserMapper.findList - ==>  Preparing: select * from t_user order by create_time desc limit ?,?;
+2026-06-10 19:57:53.818 [http-nio-8080-exec-9] DEBUG com.elderly.mapper.UserMapper.findList - ==> Parameters: 0(Integer), 10(Integer)
+2026-06-10 19:57:53.831 [http-nio-8080-exec-9] DEBUG com.elderly.mapper.UserMapper.findList - <==      Total: 5
+2026-06-10 19:57:53.832 [http-nio-8080-exec-9] DEBUG com.elderly.mapper.UserMapper.findTotal - ==>  Preparing: select count(id) from t_user
+2026-06-10 19:57:53.834 [http-nio-8080-exec-9] DEBUG com.elderly.mapper.UserMapper.findTotal - ==> Parameters: 
+2026-06-10 19:57:53.843 [http-nio-8080-exec-9] DEBUG com.elderly.mapper.UserMapper.findTotal - <==      Total: 1
+2026-06-10 19:57:54.461 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.EmployeeMapper.findList - ==>  Preparing: select * from t_employee order by create_time desc limit ?,?;
+2026-06-10 19:57:54.463 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.EmployeeMapper.findList - ==> Parameters: 0(Integer), 10(Integer)
+2026-06-10 19:57:54.466 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.EmployeeMapper.findList - <==      Total: 5
+2026-06-10 19:57:54.466 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.EmployeeMapper.findTotal - ==>  Preparing: select count(id) from t_employee
+2026-06-10 19:57:54.468 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.EmployeeMapper.findTotal - ==> Parameters: 
+2026-06-10 19:57:54.473 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.EmployeeMapper.findTotal - <==      Total: 1
+2026-06-10 19:58:21.583 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.UserMapper.findList - ==>  Preparing: select * from t_user order by create_time desc limit ?,?;
+2026-06-10 19:58:21.584 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.UserMapper.findList - ==> Parameters: 0(Integer), 10(Integer)
+2026-06-10 19:58:21.590 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.UserMapper.findList - <==      Total: 5
+2026-06-10 19:58:21.591 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.UserMapper.findTotal - ==>  Preparing: select count(id) from t_user
+2026-06-10 19:58:21.591 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.UserMapper.findTotal - ==> Parameters: 
+2026-06-10 19:58:21.597 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.UserMapper.findTotal - <==      Total: 1
+2026-06-10 19:59:10.920 [http-nio-8080-exec-10] DEBUG com.elderly.mapper.EmployeeMapper.findList - ==>  Preparing: select * from t_employee order by create_time desc limit ?,?;
+2026-06-10 19:59:10.921 [http-nio-8080-exec-10] DEBUG com.elderly.mapper.EmployeeMapper.findList - ==> Parameters: 0(Integer), 10(Integer)
+2026-06-10 19:59:10.924 [http-nio-8080-exec-10] DEBUG com.elderly.mapper.EmployeeMapper.findList - <==      Total: 5
+2026-06-10 19:59:10.925 [http-nio-8080-exec-10] DEBUG com.elderly.mapper.EmployeeMapper.findTotal - ==>  Preparing: select count(id) from t_employee
+2026-06-10 19:59:10.928 [http-nio-8080-exec-10] DEBUG com.elderly.mapper.EmployeeMapper.findTotal - ==> Parameters: 
+2026-06-10 19:59:10.930 [http-nio-8080-exec-10] DEBUG com.elderly.mapper.EmployeeMapper.findTotal - <==      Total: 1
+2026-06-10 19:59:15.903 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.RoomMapper.findList - ==>  Preparing: select * from t_room order by create_time desc limit ?,?;
+2026-06-10 19:59:15.904 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.RoomMapper.findList - ==> Parameters: 0(Integer), 10(Integer)
+2026-06-10 19:59:15.908 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.RoomMapper.findList - <==      Total: 4
+2026-06-10 19:59:15.908 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.RoomMapper.findTotal - ==>  Preparing: select count(id) from t_room
+2026-06-10 19:59:15.910 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.RoomMapper.findTotal - ==> Parameters: 
+2026-06-10 19:59:15.916 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.RoomMapper.findTotal - <==      Total: 1
+2026-06-10 19:59:16.816 [http-nio-8080-exec-2] DEBUG com.elderly.mapper.BedMapper.findList - ==>  Preparing: select a.*, b.room_name from t_bed a inner join t_room b on a.room_id = b.id order by a.create_time desc limit ?,?;
+2026-06-10 19:59:16.816 [http-nio-8080-exec-2] DEBUG com.elderly.mapper.BedMapper.findList - ==> Parameters: 0(Integer), 10(Integer)
+2026-06-10 19:59:16.830 [http-nio-8080-exec-2] DEBUG com.elderly.mapper.BedMapper.findList - <==      Total: 10
+2026-06-10 19:59:16.831 [http-nio-8080-exec-2] DEBUG com.elderly.mapper.BedMapper.findTotal - ==>  Preparing: select count(a.id) from t_bed a inner join t_room b on a.room_id = b.id
+2026-06-10 19:59:16.833 [http-nio-8080-exec-2] DEBUG com.elderly.mapper.BedMapper.findTotal - ==> Parameters: 
+2026-06-10 19:59:16.834 [http-nio-8080-exec-2] DEBUG com.elderly.mapper.BedMapper.findTotal - <==      Total: 1
+2026-06-10 19:59:17.125 [http-nio-8080-exec-3] DEBUG com.elderly.mapper.RoomMapper.findAll - ==>  Preparing: select * from t_room order by create_time asc;
+2026-06-10 19:59:17.126 [http-nio-8080-exec-3] DEBUG com.elderly.mapper.RoomMapper.findAll - ==> Parameters: 
+2026-06-10 19:59:17.127 [http-nio-8080-exec-3] DEBUG com.elderly.mapper.RoomMapper.findAll - <==      Total: 4
+2026-06-10 19:59:18.702 [http-nio-8080-exec-4] DEBUG com.elderly.mapper.RoomMapper.findList - ==>  Preparing: select * from t_room order by create_time desc limit ?,?;
+2026-06-10 19:59:18.703 [http-nio-8080-exec-4] DEBUG com.elderly.mapper.RoomMapper.findList - ==> Parameters: 0(Integer), 10(Integer)
+2026-06-10 19:59:18.704 [http-nio-8080-exec-4] DEBUG com.elderly.mapper.RoomMapper.findList - <==      Total: 4
+2026-06-10 19:59:18.705 [http-nio-8080-exec-4] DEBUG com.elderly.mapper.RoomMapper.findTotal - ==>  Preparing: select count(id) from t_room
+2026-06-10 19:59:18.705 [http-nio-8080-exec-4] DEBUG com.elderly.mapper.RoomMapper.findTotal - ==> Parameters: 
+2026-06-10 19:59:18.708 [http-nio-8080-exec-4] DEBUG com.elderly.mapper.RoomMapper.findTotal - <==      Total: 1
+2026-06-10 19:59:18.994 [http-nio-8080-exec-5] DEBUG com.elderly.mapper.BedMapper.findList - ==>  Preparing: select a.*, b.room_name from t_bed a inner join t_room b on a.room_id = b.id order by a.create_time desc limit ?,?;
+2026-06-10 19:59:18.995 [http-nio-8080-exec-5] DEBUG com.elderly.mapper.BedMapper.findList - ==> Parameters: 0(Integer), 10(Integer)
+2026-06-10 19:59:18.998 [http-nio-8080-exec-5] DEBUG com.elderly.mapper.BedMapper.findList - <==      Total: 10
+2026-06-10 19:59:18.999 [http-nio-8080-exec-5] DEBUG com.elderly.mapper.BedMapper.findTotal - ==>  Preparing: select count(a.id) from t_bed a inner join t_room b on a.room_id = b.id
+2026-06-10 19:59:18.999 [http-nio-8080-exec-5] DEBUG com.elderly.mapper.BedMapper.findTotal - ==> Parameters: 
+2026-06-10 19:59:19.002 [http-nio-8080-exec-5] DEBUG com.elderly.mapper.BedMapper.findTotal - <==      Total: 1
+2026-06-10 19:59:19.312 [http-nio-8080-exec-6] DEBUG com.elderly.mapper.RoomMapper.findAll - ==>  Preparing: select * from t_room order by create_time asc;
+2026-06-10 19:59:19.313 [http-nio-8080-exec-6] DEBUG com.elderly.mapper.RoomMapper.findAll - ==> Parameters: 
+2026-06-10 19:59:19.315 [http-nio-8080-exec-6] DEBUG com.elderly.mapper.RoomMapper.findAll - <==      Total: 4
+2026-06-10 19:59:19.651 [http-nio-8080-exec-9] DEBUG com.elderly.mapper.RoomMapper.findList - ==>  Preparing: select * from t_room order by create_time desc limit ?,?;
+2026-06-10 19:59:19.653 [http-nio-8080-exec-9] DEBUG com.elderly.mapper.RoomMapper.findList - ==> Parameters: 0(Integer), 10(Integer)
+2026-06-10 19:59:19.654 [http-nio-8080-exec-9] DEBUG com.elderly.mapper.RoomMapper.findList - <==      Total: 4
+2026-06-10 19:59:19.655 [http-nio-8080-exec-9] DEBUG com.elderly.mapper.RoomMapper.findTotal - ==>  Preparing: select count(id) from t_room
+2026-06-10 19:59:19.657 [http-nio-8080-exec-9] DEBUG com.elderly.mapper.RoomMapper.findTotal - ==> Parameters: 
+2026-06-10 19:59:19.660 [http-nio-8080-exec-9] DEBUG com.elderly.mapper.RoomMapper.findTotal - <==      Total: 1
+2026-06-10 19:59:20.289 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.UserMapper.findList - ==>  Preparing: select * from t_user order by create_time desc limit ?,?;
+2026-06-10 19:59:20.289 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.UserMapper.findList - ==> Parameters: 0(Integer), 10(Integer)
+2026-06-10 19:59:20.292 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.UserMapper.findList - <==      Total: 5
+2026-06-10 19:59:20.292 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.UserMapper.findTotal - ==>  Preparing: select count(id) from t_user
+2026-06-10 19:59:20.292 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.UserMapper.findTotal - ==> Parameters: 
+2026-06-10 19:59:20.296 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.UserMapper.findTotal - <==      Total: 1
+2026-06-10 19:59:37.601 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.EmployeeMapper.findList - ==>  Preparing: select * from t_employee order by create_time desc limit ?,?;
+2026-06-10 19:59:37.602 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.EmployeeMapper.findList - ==> Parameters: 0(Integer), 10(Integer)
+2026-06-10 19:59:37.606 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.EmployeeMapper.findList - <==      Total: 5
+2026-06-10 19:59:37.608 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.EmployeeMapper.findTotal - ==>  Preparing: select count(id) from t_employee
+2026-06-10 19:59:37.609 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.EmployeeMapper.findTotal - ==> Parameters: 
+2026-06-10 19:59:37.611 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.EmployeeMapper.findTotal - <==      Total: 1
+2026-06-10 20:00:00.010 [scheduling-1] INFO  com.elderly.service.impl.LikeServiceImpl - 开始同步新闻点赞数到数据库...
+2026-06-10 20:00:00.023 [scheduling-1] DEBUG com.elderly.service.impl.LikeServiceImpl - 没有需要同步的点赞数数据
+2026-06-10 20:00:00.023 [scheduling-1] INFO  com.elderly.service.impl.NewsServiceImpl - 开始同步新闻浏览量到数据库...
+2026-06-10 20:00:00.033 [scheduling-1] DEBUG com.elderly.mapper.NewsMapper.updateClickNum - ==>  Preparing: update t_news set click_num = ? where id = ?
+2026-06-10 20:00:00.033 [scheduling-1] DEBUG com.elderly.mapper.NewsMapper.updateClickNum - ==> Parameters: 3(Integer), 1(Integer)
+2026-06-10 20:00:00.034 [scheduling-1] DEBUG com.elderly.mapper.NewsMapper.updateClickNum - <==    Updates: 0
+2026-06-10 20:00:00.035 [scheduling-1] INFO  com.elderly.service.impl.NewsServiceImpl - 浏览量同步完成，共更新 1 条记录
+2026-06-10 20:00:32.689 [http-nio-8080-exec-10] DEBUG com.elderly.mapper.LiveMapper.findList - ==>  Preparing: select a.*, b.bed_no,b.room_id, c.room_name from t_live a inner join t_bed b on a.bed_id = b.id inner join t_room c on b.room_id = c.id order by a.create_time desc limit ?,?;
+2026-06-10 20:00:32.689 [http-nio-8080-exec-10] DEBUG com.elderly.mapper.LiveMapper.findList - ==> Parameters: 0(Integer), 10(Integer)
+2026-06-10 20:00:32.693 [http-nio-8080-exec-10] DEBUG com.elderly.mapper.LiveMapper.findList - <==      Total: 7
+2026-06-10 20:00:32.695 [http-nio-8080-exec-10] DEBUG com.elderly.mapper.LiveMapper.findTotal - ==>  Preparing: select count(a.id) from t_live a inner join t_bed b on a.bed_id = b.id inner join t_room c on b.room_id = c.id
+2026-06-10 20:00:32.695 [http-nio-8080-exec-10] DEBUG com.elderly.mapper.LiveMapper.findTotal - ==> Parameters: 
+2026-06-10 20:00:32.696 [http-nio-8080-exec-10] DEBUG com.elderly.mapper.LiveMapper.findTotal - <==      Total: 1
+2026-06-10 20:00:33.011 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.RoomMapper.findAll - ==>  Preparing: select * from t_room order by create_time asc;
+2026-06-10 20:00:33.011 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.RoomMapper.findAll - ==> Parameters: 
+2026-06-10 20:00:33.016 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.RoomMapper.findAll - <==      Total: 4
+2026-06-10 20:00:33.017 [http-nio-8080-exec-2] DEBUG com.elderly.mapper.UserMapper.findAll - ==>  Preparing: select * from t_user order by id asc;
+2026-06-10 20:00:33.018 [http-nio-8080-exec-2] DEBUG com.elderly.mapper.UserMapper.findAll - ==> Parameters: 
+2026-06-10 20:00:33.031 [http-nio-8080-exec-2] DEBUG com.elderly.mapper.UserMapper.findAll - <==      Total: 5
+2026-06-10 20:00:35.529 [http-nio-8080-exec-4] DEBUG com.elderly.mapper.RoomMapper.findAll - ==>  Preparing: select * from t_room order by create_time asc;
+2026-06-10 20:00:35.529 [http-nio-8080-exec-4] DEBUG com.elderly.mapper.RoomMapper.findAll - ==> Parameters: 
+2026-06-10 20:00:35.534 [http-nio-8080-exec-4] DEBUG com.elderly.mapper.RoomMapper.findAll - <==      Total: 4
+2026-06-10 20:00:35.538 [http-nio-8080-exec-3] DEBUG com.elderly.mapper.VisitMapper.findList - ==>  Preparing: select a.*, b.bed_id,b.name, c.bed_no,c.room_id, d.room_name from t_visit a inner join t_live b on a.live_id = b.id inner join t_bed c on b.bed_id = c.id inner join t_room d on c.room_id = d.id order by a.create_time desc limit ?,?;
+2026-06-10 20:00:35.538 [http-nio-8080-exec-3] DEBUG com.elderly.mapper.VisitMapper.findList - ==> Parameters: 0(Integer), 10(Integer)
+2026-06-10 20:00:35.540 [http-nio-8080-exec-3] DEBUG com.elderly.mapper.VisitMapper.findList - <==      Total: 2
+2026-06-10 20:00:35.541 [http-nio-8080-exec-3] DEBUG com.elderly.mapper.VisitMapper.findTotal - ==>  Preparing: select count(a.id) from t_visit a inner join t_live b on a.live_id = b.id inner join t_bed c on b.bed_id = c.id inner join t_room d on c.room_id = d.id
+2026-06-10 20:00:35.542 [http-nio-8080-exec-3] DEBUG com.elderly.mapper.VisitMapper.findTotal - ==> Parameters: 
+2026-06-10 20:00:35.542 [http-nio-8080-exec-3] DEBUG com.elderly.mapper.VisitMapper.findTotal - <==      Total: 1
+2026-06-10 20:01:51.004 [http-nio-8080-exec-5] DEBUG com.elderly.controller.HomeController - 验证码已存入 Redis: key=captcha:1e642c4c796e4f26a376300ab6dc32a0, code=RWgr
+2026-06-10 20:02:01.670 [http-nio-8080-exec-9] INFO  com.elderly.service.impl.UserServiceImpl - 用户登录尝试: username=admin, role=0
+2026-06-10 20:02:01.680 [http-nio-8080-exec-9] DEBUG com.elderly.mapper.AdminMapper.selectByUsername - ==>  Preparing: select * from t_admin where username = ?;
+2026-06-10 20:02:01.681 [http-nio-8080-exec-9] DEBUG com.elderly.mapper.AdminMapper.selectByUsername - ==> Parameters: admin(String)
+2026-06-10 20:02:01.682 [http-nio-8080-exec-9] DEBUG com.elderly.mapper.AdminMapper.selectByUsername - <==      Total: 1
+2026-06-10 20:02:01.685 [http-nio-8080-exec-9] INFO  com.elderly.service.impl.UserServiceImpl - 用户登录成功: username=admin, role=ADMIN, userId=1
+2026-06-10 20:02:14.596 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.EmployeeMapper.findList - ==>  Preparing: select * from t_employee order by create_time desc limit ?,?;
+2026-06-10 20:02:14.596 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.EmployeeMapper.findList - ==> Parameters: 0(Integer), 10(Integer)
+2026-06-10 20:02:14.598 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.EmployeeMapper.findList - <==      Total: 5
+2026-06-10 20:02:14.599 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.EmployeeMapper.findTotal - ==>  Preparing: select count(id) from t_employee
+2026-06-10 20:02:14.599 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.EmployeeMapper.findTotal - ==> Parameters: 
+2026-06-10 20:02:14.603 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.EmployeeMapper.findTotal - <==      Total: 1
+2026-06-10 20:03:48.649 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.0.Final
+2026-06-10 20:03:48.675 [restartedMain] INFO  com.elderly.ElderlyCareServerApplication - Starting ElderlyCareServerApplication using Java 21.0.11 with PID 12292 (D:\project\code\code\elderly-care-server\target\classes started by Wu in D:\project\code\code\elderly-care-server)
+2026-06-10 20:03:48.675 [restartedMain] DEBUG com.elderly.ElderlyCareServerApplication - Running with Spring Boot v3.0.2, Spring v6.0.4
+2026-06-10 20:03:48.675 [restartedMain] INFO  com.elderly.ElderlyCareServerApplication - No active profile set, falling back to 1 default profile: "default"
+2026-06-10 20:03:48.708 [restartedMain] INFO  o.s.boot.devtools.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\15992\.m2\repository\commons-logging\commons-logging\1.0.3\commons-logging-1.0.3.jar referenced one or more files that do not exist: file:/C:/Users/15992/.m2/repository/commons-logging/commons-logging/1.0.3/log4j.jar,file:/C:/Users/15992/.m2/repository/commons-logging/commons-logging/1.0.3/log4j-core.jar
+2026-06-10 20:03:48.708 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-06-10 20:03:48.708 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-06-10 20:03:49.305 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-06-10 20:03:49.309 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-06-10 20:03:49.347 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 26 ms. Found 0 Redis repository interfaces.
+2026-06-10 20:03:49.869 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2026-06-10 20:03:49.877 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-06-10 20:03:49.878 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-06-10 20:03:49.878 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2026-06-10 20:03:49.919 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-06-10 20:03:49.920 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1211 ms
+2026-06-10 20:03:50.120 [restartedMain] DEBUG com.elderly.common.config.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-06-10 20:03:50.627 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@12ac7c8a, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@d76e9b0, org.springframework.security.web.context.SecurityContextHolderFilter@7460e9b5, org.springframework.security.web.header.HeaderWriterFilter@5792d4e9, org.springframework.security.web.authentication.logout.LogoutFilter@6761effb, com.elderly.common.config.JwtAuthenticationFilter@2f0d18d2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7988dd28, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@690081df, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@71cd8a60, org.springframework.security.web.session.SessionManagementFilter@61edf853, org.springframework.security.web.access.ExceptionTranslationFilter@75bc54ba, org.springframework.security.web.access.intercept.AuthorizationFilter@3e942a2d]
+2026-06-10 20:03:50.817 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2026-06-10 20:03:50.826 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-06-10 20:03:50.910 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2026-06-10 20:03:50.915 [restartedMain] INFO  com.elderly.ElderlyCareServerApplication - Started ElderlyCareServerApplication in 2.575 seconds (process running for 2.881)
+2026-06-10 20:04:10.397 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-0} closing ...
+2026-06-10 20:04:37.324 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.0.Final
+2026-06-10 20:04:37.350 [restartedMain] INFO  com.elderly.ElderlyCareServerApplication - Starting ElderlyCareServerApplication using Java 21.0.11 with PID 21344 (D:\project\code\code\elderly-care-server\target\classes started by Wu in D:\project\code\code\elderly-care-server)
+2026-06-10 20:04:37.350 [restartedMain] DEBUG com.elderly.ElderlyCareServerApplication - Running with Spring Boot v3.0.2, Spring v6.0.4
+2026-06-10 20:04:37.351 [restartedMain] INFO  com.elderly.ElderlyCareServerApplication - No active profile set, falling back to 1 default profile: "default"
+2026-06-10 20:04:37.383 [restartedMain] INFO  o.s.boot.devtools.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\15992\.m2\repository\commons-logging\commons-logging\1.0.3\commons-logging-1.0.3.jar referenced one or more files that do not exist: file:/C:/Users/15992/.m2/repository/commons-logging/commons-logging/1.0.3/log4j.jar,file:/C:/Users/15992/.m2/repository/commons-logging/commons-logging/1.0.3/log4j-core.jar
+2026-06-10 20:04:37.383 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-06-10 20:04:37.383 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-06-10 20:04:37.868 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-06-10 20:04:37.869 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-06-10 20:04:37.896 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 19 ms. Found 0 Redis repository interfaces.
+2026-06-10 20:04:38.312 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2026-06-10 20:04:38.319 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-06-10 20:04:38.320 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-06-10 20:04:38.320 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2026-06-10 20:04:38.356 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-06-10 20:04:38.358 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 974 ms
+2026-06-10 20:04:38.545 [restartedMain] DEBUG com.elderly.common.config.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-06-10 20:04:39.008 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@620682ec, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3f9e33bd, org.springframework.security.web.context.SecurityContextHolderFilter@7a684dfa, org.springframework.security.web.header.HeaderWriterFilter@15633f4f, org.springframework.security.web.authentication.logout.LogoutFilter@7cbe78a9, com.elderly.common.config.JwtAuthenticationFilter@17b4147b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@658a921f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7aee8986, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3580c570, org.springframework.security.web.session.SessionManagementFilter@1f9dd48b, org.springframework.security.web.access.ExceptionTranslationFilter@55d1e092, org.springframework.security.web.access.intercept.AuthorizationFilter@4c4220f9]
+2026-06-10 20:04:39.189 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2026-06-10 20:04:39.197 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-06-10 20:04:39.279 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2026-06-10 20:04:39.286 [restartedMain] INFO  com.elderly.ElderlyCareServerApplication - Started ElderlyCareServerApplication in 2.278 seconds (process running for 2.636)
+2026-06-10 20:05:02.738 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-0} closing ...
+2026-06-10 20:05:30.051 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.0.Final
+2026-06-10 20:05:30.077 [restartedMain] INFO  com.elderly.ElderlyCareServerApplication - Starting ElderlyCareServerApplication using Java 21.0.11 with PID 32148 (D:\project\code\code\elderly-care-server\target\classes started by Wu in D:\project\code\code\elderly-care-server)
+2026-06-10 20:05:30.078 [restartedMain] DEBUG com.elderly.ElderlyCareServerApplication - Running with Spring Boot v3.0.2, Spring v6.0.4
+2026-06-10 20:05:30.078 [restartedMain] INFO  com.elderly.ElderlyCareServerApplication - No active profile set, falling back to 1 default profile: "default"
+2026-06-10 20:05:30.109 [restartedMain] INFO  o.s.boot.devtools.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\15992\.m2\repository\commons-logging\commons-logging\1.0.3\commons-logging-1.0.3.jar referenced one or more files that do not exist: file:/C:/Users/15992/.m2/repository/commons-logging/commons-logging/1.0.3/log4j.jar,file:/C:/Users/15992/.m2/repository/commons-logging/commons-logging/1.0.3/log4j-core.jar
+2026-06-10 20:05:30.109 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-06-10 20:05:30.109 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-06-10 20:05:30.611 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-06-10 20:05:30.613 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-06-10 20:05:30.643 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 21 ms. Found 0 Redis repository interfaces.
+2026-06-10 20:05:31.073 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2026-06-10 20:05:31.080 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-06-10 20:05:31.081 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-06-10 20:05:31.082 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2026-06-10 20:05:31.116 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-06-10 20:05:31.117 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1006 ms
+2026-06-10 20:05:31.299 [restartedMain] DEBUG com.elderly.common.config.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-06-10 20:05:31.758 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@668f17d1, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5ac418a8, org.springframework.security.web.context.SecurityContextHolderFilter@e4bba8f, org.springframework.security.web.header.HeaderWriterFilter@1ce25783, org.springframework.security.web.authentication.logout.LogoutFilter@690081df, com.elderly.common.config.JwtAuthenticationFilter@65a9f18d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@68977756, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3e26d44b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@57f1ca8d, org.springframework.security.web.session.SessionManagementFilter@7a1ad3a4, org.springframework.security.web.access.ExceptionTranslationFilter@44c2ee78, org.springframework.security.web.access.intercept.AuthorizationFilter@1455145c]
+2026-06-10 20:05:31.951 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2026-06-10 20:05:31.959 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-06-10 20:05:32.045 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2026-06-10 20:05:32.053 [restartedMain] INFO  com.elderly.ElderlyCareServerApplication - Started ElderlyCareServerApplication in 2.299 seconds (process running for 2.595)
+2026-06-10 20:05:49.489 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-10 20:05:49.491 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-06-10 20:05:49.492 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-06-10 20:05:50.314 [http-nio-8080-exec-1] DEBUG com.elderly.controller.HomeController - 验证码已存入 Redis: key=captcha:971d3888276e41f78f488de7fdb7deff, code=Gwd7
+2026-06-10 20:05:58.617 [http-nio-8080-exec-4] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2026-06-10 20:05:58.798 [http-nio-8080-exec-4] DEBUG com.elderly.mapper.EmployeeMapper.findList - ==>  Preparing: select * from t_employee order by create_time desc limit ?,?;
+2026-06-10 20:05:58.822 [http-nio-8080-exec-4] DEBUG com.elderly.mapper.EmployeeMapper.findList - ==> Parameters: 0(Integer), 10(Integer)
+2026-06-10 20:05:58.851 [http-nio-8080-exec-4] DEBUG com.elderly.mapper.EmployeeMapper.findList - <==      Total: 5
+2026-06-10 20:05:58.858 [http-nio-8080-exec-4] DEBUG com.elderly.mapper.EmployeeMapper.findTotal - ==>  Preparing: select count(id) from t_employee
+2026-06-10 20:05:58.858 [http-nio-8080-exec-4] DEBUG com.elderly.mapper.EmployeeMapper.findTotal - ==> Parameters: 
+2026-06-10 20:05:58.863 [http-nio-8080-exec-4] DEBUG com.elderly.mapper.EmployeeMapper.findTotal - <==      Total: 1
+2026-06-10 20:06:00.941 [http-nio-8080-exec-5] DEBUG com.elderly.mapper.UserMapper.findList - ==>  Preparing: select * from t_user order by create_time desc limit ?,?;
+2026-06-10 20:06:00.942 [http-nio-8080-exec-5] DEBUG com.elderly.mapper.UserMapper.findList - ==> Parameters: 0(Integer), 10(Integer)
+2026-06-10 20:06:00.950 [http-nio-8080-exec-5] DEBUG com.elderly.mapper.UserMapper.findList - <==      Total: 5
+2026-06-10 20:06:00.951 [http-nio-8080-exec-5] DEBUG com.elderly.mapper.UserMapper.findTotal - ==>  Preparing: select count(id) from t_user
+2026-06-10 20:06:00.953 [http-nio-8080-exec-5] DEBUG com.elderly.mapper.UserMapper.findTotal - ==> Parameters: 
+2026-06-10 20:06:00.956 [http-nio-8080-exec-5] DEBUG com.elderly.mapper.UserMapper.findTotal - <==      Total: 1
+2026-06-10 20:06:07.171 [http-nio-8080-exec-6] DEBUG com.elderly.mapper.LeaveMapper.findList - ==>  Preparing: select a.*, b.bed_id,b.name, c.bed_no,c.room_id, d.room_name from t_leave a inner join t_live b on a.live_id = b.id inner join t_bed c on b.bed_id = c.id inner join t_room d on c.room_id = d.id order by a.create_time desc limit ?,?;
+2026-06-10 20:06:07.174 [http-nio-8080-exec-6] DEBUG com.elderly.mapper.LeaveMapper.findList - ==> Parameters: 0(Integer), 5(Integer)
+2026-06-10 20:06:07.178 [http-nio-8080-exec-6] DEBUG com.elderly.mapper.LeaveMapper.findList - <==      Total: 2
+2026-06-10 20:06:07.179 [http-nio-8080-exec-6] DEBUG com.elderly.mapper.LeaveMapper.findTotal - ==>  Preparing: select count(a.id) from t_leave a inner join t_live b on a.live_id = b.id inner join t_bed c on b.bed_id = c.id inner join t_room d on c.room_id = d.id
+2026-06-10 20:06:07.179 [http-nio-8080-exec-6] DEBUG com.elderly.mapper.LeaveMapper.findTotal - ==> Parameters: 
+2026-06-10 20:06:07.181 [http-nio-8080-exec-6] DEBUG com.elderly.mapper.LeaveMapper.findTotal - <==      Total: 1
+2026-06-10 20:06:09.586 [http-nio-8080-exec-3] INFO  com.elderly.service.impl.UserServiceImpl - 用户登录尝试: username=admin, role=0
+2026-06-10 20:06:09.607 [http-nio-8080-exec-3] DEBUG com.elderly.mapper.AdminMapper.selectByUsername - ==>  Preparing: select * from t_admin where username = ?;
+2026-06-10 20:06:09.610 [http-nio-8080-exec-3] DEBUG com.elderly.mapper.AdminMapper.selectByUsername - ==> Parameters: admin(String)
+2026-06-10 20:06:09.613 [http-nio-8080-exec-3] DEBUG com.elderly.mapper.AdminMapper.selectByUsername - <==      Total: 1
+2026-06-10 20:06:09.637 [http-nio-8080-exec-3] INFO  com.elderly.service.impl.UserServiceImpl - 用户登录成功: username=admin, role=ADMIN, userId=1
+2026-06-10 20:06:10.400 [http-nio-8080-exec-9] DEBUG com.elderly.mapper.RoomMapper.findAll - ==>  Preparing: select * from t_room order by create_time asc;
+2026-06-10 20:06:10.401 [http-nio-8080-exec-9] DEBUG com.elderly.mapper.RoomMapper.findAll - ==> Parameters: 
+2026-06-10 20:06:10.407 [http-nio-8080-exec-9] DEBUG com.elderly.mapper.RoomMapper.findAll - <==      Total: 4
+2026-06-10 20:06:10.409 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.VisitMapper.findList - ==>  Preparing: select a.*, b.bed_id,b.name, c.bed_no,c.room_id, d.room_name from t_visit a inner join t_live b on a.live_id = b.id inner join t_bed c on b.bed_id = c.id inner join t_room d on c.room_id = d.id order by a.create_time desc limit ?,?;
+2026-06-10 20:06:10.410 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.VisitMapper.findList - ==> Parameters: 0(Integer), 10(Integer)
+2026-06-10 20:06:10.417 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.VisitMapper.findList - <==      Total: 2
+2026-06-10 20:06:10.419 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.VisitMapper.findTotal - ==>  Preparing: select count(a.id) from t_visit a inner join t_live b on a.live_id = b.id inner join t_bed c on b.bed_id = c.id inner join t_room d on c.room_id = d.id
+2026-06-10 20:06:10.420 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.VisitMapper.findTotal - ==> Parameters: 
+2026-06-10 20:06:10.421 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.VisitMapper.findTotal - <==      Total: 1
+2026-06-10 20:06:16.796 [http-nio-8080-exec-10] DEBUG com.elderly.mapper.FeedbackMapper.findList - ==>  Preparing: select a.*,b.nickname,b.avatar from t_feedback a inner join t_user b on a.user_id = b.id order by a.create_time desc limit ?,?;
+2026-06-10 20:06:16.797 [http-nio-8080-exec-10] DEBUG com.elderly.mapper.FeedbackMapper.findList - ==> Parameters: 0(Integer), 10(Integer)
+2026-06-10 20:06:16.804 [http-nio-8080-exec-10] DEBUG com.elderly.mapper.FeedbackMapper.findList - <==      Total: 7
+2026-06-10 20:06:16.806 [http-nio-8080-exec-10] DEBUG com.elderly.mapper.FeedbackMapper.findTotal - ==>  Preparing: select count(a.id) from t_feedback a inner join t_user b on a.user_id = b.id
+2026-06-10 20:06:16.806 [http-nio-8080-exec-10] DEBUG com.elderly.mapper.FeedbackMapper.findTotal - ==> Parameters: 
+2026-06-10 20:06:16.810 [http-nio-8080-exec-10] DEBUG com.elderly.mapper.FeedbackMapper.findTotal - <==      Total: 1
+2026-06-10 20:06:21.754 [http-nio-8080-exec-1] DEBUG com.elderly.service.impl.UserServiceImpl - 统计数据从数据库获取
+2026-06-10 20:06:21.756 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.EmployeeMapper.countTotal - ==>  Preparing: select count(id) from t_employee;
+2026-06-10 20:06:21.757 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.EmployeeMapper.countTotal - ==> Parameters: 
+2026-06-10 20:06:21.768 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.EmployeeMapper.countTotal - <==      Total: 1
+2026-06-10 20:06:21.770 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.LiveMapper.countTotal - ==>  Preparing: select count(id) from t_live where status = 0;
+2026-06-10 20:06:21.771 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.LiveMapper.countTotal - ==> Parameters: 
+2026-06-10 20:06:21.773 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.LiveMapper.countTotal - <==      Total: 1
+2026-06-10 20:06:21.774 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.RoomMapper.countTotal - ==>  Preparing: select count(id) from t_room;
+2026-06-10 20:06:21.775 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.RoomMapper.countTotal - ==> Parameters: 
+2026-06-10 20:06:21.781 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.RoomMapper.countTotal - <==      Total: 1
+2026-06-10 20:06:21.783 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.BedMapper.countTotal - ==>  Preparing: select count(id) from t_bed;
+2026-06-10 20:06:21.784 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.BedMapper.countTotal - ==> Parameters: 
+2026-06-10 20:06:21.790 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.BedMapper.countTotal - <==      Total: 1
+2026-06-10 20:06:21.792 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.BedMapper.countByStatus - ==>  Preparing: select count(id) from t_bed where status = ?;
+2026-06-10 20:06:21.793 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.BedMapper.countByStatus - ==> Parameters: 0(Integer)
+2026-06-10 20:06:21.796 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.BedMapper.countByStatus - <==      Total: 1
+2026-06-10 20:06:21.801 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.BedMapper.countByStatus - ==>  Preparing: select count(id) from t_bed where status = ?;
+2026-06-10 20:06:21.801 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.BedMapper.countByStatus - ==> Parameters: 1(Integer)
+2026-06-10 20:06:21.803 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.BedMapper.countByStatus - <==      Total: 1
+2026-06-10 20:06:21.805 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.LiveMapper.countBySex - ==>  Preparing: select count(id) from t_live where status = 0 and sex = ?;
+2026-06-10 20:06:21.806 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.LiveMapper.countBySex - ==> Parameters: 0(Integer)
+2026-06-10 20:06:21.810 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.LiveMapper.countBySex - <==      Total: 1
+2026-06-10 20:06:21.811 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.LiveMapper.countBySex - ==>  Preparing: select count(id) from t_live where status = 0 and sex = ?;
+2026-06-10 20:06:21.811 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.LiveMapper.countBySex - ==> Parameters: 1(Integer)
+2026-06-10 20:06:21.812 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.LiveMapper.countBySex - <==      Total: 1
+2026-06-10 20:06:21.817 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.LiveMapper.countByDate - ==>  Preparing: select count(id) from t_live where status = 0 and begin_time = ?
+2026-06-10 20:06:21.818 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.LiveMapper.countByDate - ==> Parameters: 2026-06-04(String)
+2026-06-10 20:06:21.821 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.LiveMapper.countByDate - <==      Total: 1
+2026-06-10 20:06:21.822 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.LiveMapper.countByDate - ==>  Preparing: select count(id) from t_live where status = 0 and begin_time = ?
+2026-06-10 20:06:21.823 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.LiveMapper.countByDate - ==> Parameters: 2026-06-05(String)
+2026-06-10 20:06:21.824 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.LiveMapper.countByDate - <==      Total: 1
+2026-06-10 20:06:21.826 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.LiveMapper.countByDate - ==>  Preparing: select count(id) from t_live where status = 0 and begin_time = ?
+2026-06-10 20:06:21.828 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.LiveMapper.countByDate - ==> Parameters: 2026-06-06(String)
+2026-06-10 20:06:21.831 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.LiveMapper.countByDate - <==      Total: 1
+2026-06-10 20:06:21.832 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.LiveMapper.countByDate - ==>  Preparing: select count(id) from t_live where status = 0 and begin_time = ?
+2026-06-10 20:06:21.833 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.LiveMapper.countByDate - ==> Parameters: 2026-06-07(String)
+2026-06-10 20:06:21.837 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.LiveMapper.countByDate - <==      Total: 1
+2026-06-10 20:06:21.838 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.LiveMapper.countByDate - ==>  Preparing: select count(id) from t_live where status = 0 and begin_time = ?
+2026-06-10 20:06:21.838 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.LiveMapper.countByDate - ==> Parameters: 2026-06-08(String)
+2026-06-10 20:06:21.839 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.LiveMapper.countByDate - <==      Total: 1
+2026-06-10 20:06:21.840 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.LiveMapper.countByDate - ==>  Preparing: select count(id) from t_live where status = 0 and begin_time = ?
+2026-06-10 20:06:21.840 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.LiveMapper.countByDate - ==> Parameters: 2026-06-09(String)
+2026-06-10 20:06:21.840 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.LiveMapper.countByDate - <==      Total: 1
+2026-06-10 20:06:21.840 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.LiveMapper.countByDate - ==>  Preparing: select count(id) from t_live where status = 0 and begin_time = ?
+2026-06-10 20:06:21.840 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.LiveMapper.countByDate - ==> Parameters: 2026-06-10(String)
+2026-06-10 20:06:21.842 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.LiveMapper.countByDate - <==      Total: 1
+2026-06-10 20:06:22.301 [http-nio-8080-exec-2] DEBUG com.elderly.mapper.UserMapper.findList - ==>  Preparing: select * from t_user order by create_time desc limit ?,?;
+2026-06-10 20:06:22.302 [http-nio-8080-exec-2] DEBUG com.elderly.mapper.UserMapper.findList - ==> Parameters: 0(Integer), 10(Integer)
+2026-06-10 20:06:22.305 [http-nio-8080-exec-2] DEBUG com.elderly.mapper.UserMapper.findList - <==      Total: 5
+2026-06-10 20:06:22.306 [http-nio-8080-exec-2] DEBUG com.elderly.mapper.UserMapper.findTotal - ==>  Preparing: select count(id) from t_user
+2026-06-10 20:06:22.306 [http-nio-8080-exec-2] DEBUG com.elderly.mapper.UserMapper.findTotal - ==> Parameters: 
+2026-06-10 20:06:22.311 [http-nio-8080-exec-2] DEBUG com.elderly.mapper.UserMapper.findTotal - <==      Total: 1
+2026-06-10 20:06:23.630 [http-nio-8080-exec-4] DEBUG com.elderly.mapper.EmployeeMapper.findList - ==>  Preparing: select * from t_employee order by create_time desc limit ?,?;
+2026-06-10 20:06:23.632 [http-nio-8080-exec-4] DEBUG com.elderly.mapper.EmployeeMapper.findList - ==> Parameters: 0(Integer), 10(Integer)
+2026-06-10 20:06:23.635 [http-nio-8080-exec-4] DEBUG com.elderly.mapper.EmployeeMapper.findList - <==      Total: 5
+2026-06-10 20:06:23.639 [http-nio-8080-exec-4] DEBUG com.elderly.mapper.EmployeeMapper.findTotal - ==>  Preparing: select count(id) from t_employee
+2026-06-10 20:06:23.641 [http-nio-8080-exec-4] DEBUG com.elderly.mapper.EmployeeMapper.findTotal - ==> Parameters: 
+2026-06-10 20:06:23.650 [http-nio-8080-exec-4] DEBUG com.elderly.mapper.EmployeeMapper.findTotal - <==      Total: 1
+2026-06-10 20:06:23.653 [http-nio-8080-exec-5] DEBUG com.elderly.mapper.EmployeeMapper.findList - ==>  Preparing: select * from t_employee order by create_time desc limit ?,?;
+2026-06-10 20:06:23.653 [http-nio-8080-exec-5] DEBUG com.elderly.mapper.EmployeeMapper.findList - ==> Parameters: 0(Integer), 10(Integer)
+2026-06-10 20:06:23.656 [http-nio-8080-exec-5] DEBUG com.elderly.mapper.EmployeeMapper.findList - <==      Total: 5
+2026-06-10 20:06:23.656 [http-nio-8080-exec-5] DEBUG com.elderly.mapper.EmployeeMapper.findTotal - ==>  Preparing: select count(id) from t_employee
+2026-06-10 20:06:23.657 [http-nio-8080-exec-5] DEBUG com.elderly.mapper.EmployeeMapper.findTotal - ==> Parameters: 
+2026-06-10 20:06:23.661 [http-nio-8080-exec-5] DEBUG com.elderly.mapper.EmployeeMapper.findTotal - <==      Total: 1
+2026-06-10 20:06:25.485 [http-nio-8080-exec-3] DEBUG com.elderly.mapper.RoomMapper.findList - ==>  Preparing: select * from t_room order by create_time desc limit ?,?;
+2026-06-10 20:06:25.487 [http-nio-8080-exec-3] DEBUG com.elderly.mapper.RoomMapper.findList - ==> Parameters: 0(Integer), 10(Integer)
+2026-06-10 20:06:25.490 [http-nio-8080-exec-3] DEBUG com.elderly.mapper.RoomMapper.findList - <==      Total: 4
+2026-06-10 20:06:25.491 [http-nio-8080-exec-3] DEBUG com.elderly.mapper.RoomMapper.findTotal - ==>  Preparing: select count(id) from t_room
+2026-06-10 20:06:25.491 [http-nio-8080-exec-3] DEBUG com.elderly.mapper.RoomMapper.findTotal - ==> Parameters: 
+2026-06-10 20:06:25.495 [http-nio-8080-exec-3] DEBUG com.elderly.mapper.RoomMapper.findTotal - <==      Total: 1
+2026-06-10 20:06:26.295 [http-nio-8080-exec-9] DEBUG com.elderly.mapper.RoomMapper.findAll - ==>  Preparing: select * from t_room order by create_time asc;
+2026-06-10 20:06:26.295 [http-nio-8080-exec-9] DEBUG com.elderly.mapper.RoomMapper.findAll - ==> Parameters: 
+2026-06-10 20:06:26.296 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.BedMapper.findList - ==>  Preparing: select a.*, b.room_name from t_bed a inner join t_room b on a.room_id = b.id order by a.create_time desc limit ?,?;
+2026-06-10 20:06:26.297 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.BedMapper.findList - ==> Parameters: 0(Integer), 10(Integer)
+2026-06-10 20:06:26.300 [http-nio-8080-exec-9] DEBUG com.elderly.mapper.RoomMapper.findAll - <==      Total: 4
+2026-06-10 20:06:26.309 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.BedMapper.findList - <==      Total: 10
+2026-06-10 20:06:26.312 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.BedMapper.findTotal - ==>  Preparing: select count(a.id) from t_bed a inner join t_room b on a.room_id = b.id
+2026-06-10 20:06:26.313 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.BedMapper.findTotal - ==> Parameters: 
+2026-06-10 20:06:26.314 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.BedMapper.findTotal - <==      Total: 1
+2026-06-10 20:06:28.778 [http-nio-8080-exec-8] DEBUG c.elderly.mapper.ResthomeMapper.selectByPrimaryKey - ==>  Preparing: select id , title, begin_time, end_time, phone, address, cover, brief, content, click_num, create_time, update_time from t_resthome where id = ?
+2026-06-10 20:06:28.779 [http-nio-8080-exec-8] DEBUG c.elderly.mapper.ResthomeMapper.selectByPrimaryKey - ==> Parameters: 1(Integer)
+2026-06-10 20:06:28.785 [http-nio-8080-exec-8] DEBUG c.elderly.mapper.ResthomeMapper.selectByPrimaryKey - <==      Total: 1
+2026-06-10 20:06:43.024 [http-nio-8080-exec-10] DEBUG com.elderly.mapper.UserMapper.findList - ==>  Preparing: select * from t_user order by create_time desc limit ?,?;
+2026-06-10 20:06:43.025 [http-nio-8080-exec-10] DEBUG com.elderly.mapper.UserMapper.findList - ==> Parameters: 0(Integer), 10(Integer)
+2026-06-10 20:06:43.029 [http-nio-8080-exec-10] DEBUG com.elderly.mapper.UserMapper.findList - <==      Total: 5
+2026-06-10 20:06:43.030 [http-nio-8080-exec-10] DEBUG com.elderly.mapper.UserMapper.findTotal - ==>  Preparing: select count(id) from t_user
+2026-06-10 20:06:43.030 [http-nio-8080-exec-10] DEBUG com.elderly.mapper.UserMapper.findTotal - ==> Parameters: 
+2026-06-10 20:06:43.034 [http-nio-8080-exec-10] DEBUG com.elderly.mapper.UserMapper.findTotal - <==      Total: 1
+2026-06-10 20:06:43.964 [http-nio-8080-exec-1] DEBUG com.elderly.service.impl.UserServiceImpl - 统计数据从缓存获取
+2026-06-10 20:06:47.944 [http-nio-8080-exec-2] DEBUG com.elderly.mapper.EmployeeMapper.findList - ==>  Preparing: select * from t_employee order by create_time desc limit ?,?;
+2026-06-10 20:06:47.945 [http-nio-8080-exec-2] DEBUG com.elderly.mapper.EmployeeMapper.findList - ==> Parameters: 0(Integer), 10(Integer)
+2026-06-10 20:06:47.951 [http-nio-8080-exec-2] DEBUG com.elderly.mapper.EmployeeMapper.findList - <==      Total: 5
+2026-06-10 20:06:47.956 [http-nio-8080-exec-2] DEBUG com.elderly.mapper.EmployeeMapper.findTotal - ==>  Preparing: select count(id) from t_employee
+2026-06-10 20:06:47.956 [http-nio-8080-exec-2] DEBUG com.elderly.mapper.EmployeeMapper.findTotal - ==> Parameters: 
+2026-06-10 20:06:47.962 [http-nio-8080-exec-2] DEBUG com.elderly.mapper.EmployeeMapper.findTotal - <==      Total: 1
+2026-06-10 20:06:48.051 [http-nio-8080-exec-4] DEBUG com.elderly.mapper.UserMapper.findList - ==>  Preparing: select * from t_user order by create_time desc limit ?,?;
+2026-06-10 20:06:48.051 [http-nio-8080-exec-4] DEBUG com.elderly.mapper.UserMapper.findList - ==> Parameters: 0(Integer), 10(Integer)
+2026-06-10 20:06:48.053 [http-nio-8080-exec-4] DEBUG com.elderly.mapper.UserMapper.findList - <==      Total: 5
+2026-06-10 20:06:48.057 [http-nio-8080-exec-4] DEBUG com.elderly.mapper.UserMapper.findTotal - ==>  Preparing: select count(id) from t_user
+2026-06-10 20:06:48.061 [http-nio-8080-exec-4] DEBUG com.elderly.mapper.UserMapper.findTotal - ==> Parameters: 
+2026-06-10 20:06:48.068 [http-nio-8080-exec-4] DEBUG com.elderly.mapper.UserMapper.findTotal - <==      Total: 1
+2026-06-10 20:06:48.325 [http-nio-8080-exec-6] DEBUG com.elderly.service.impl.UserServiceImpl - 统计数据从缓存获取
+2026-06-10 20:07:13.554 [http-nio-8080-exec-3] DEBUG com.elderly.mapper.UserMapper.findList - ==>  Preparing: select * from t_user order by create_time desc limit ?,?;
+2026-06-10 20:07:13.556 [http-nio-8080-exec-3] DEBUG com.elderly.mapper.UserMapper.findList - ==> Parameters: 0(Integer), 10(Integer)
+2026-06-10 20:07:13.559 [http-nio-8080-exec-3] DEBUG com.elderly.mapper.UserMapper.findList - <==      Total: 5
+2026-06-10 20:07:13.560 [http-nio-8080-exec-3] DEBUG com.elderly.mapper.UserMapper.findTotal - ==>  Preparing: select count(id) from t_user
+2026-06-10 20:07:13.560 [http-nio-8080-exec-3] DEBUG com.elderly.mapper.UserMapper.findTotal - ==> Parameters: 
+2026-06-10 20:07:13.563 [http-nio-8080-exec-3] DEBUG com.elderly.mapper.UserMapper.findTotal - <==      Total: 1
+2026-06-10 20:10:00.006 [scheduling-1] INFO  com.elderly.service.impl.LikeServiceImpl - 开始同步新闻点赞数到数据库...
+2026-06-10 20:10:00.015 [scheduling-1] DEBUG com.elderly.service.impl.LikeServiceImpl - 没有需要同步的点赞数数据
+2026-06-10 20:10:00.016 [scheduling-1] INFO  com.elderly.service.impl.NewsServiceImpl - 开始同步新闻浏览量到数据库...
+2026-06-10 20:10:00.025 [scheduling-1] DEBUG com.elderly.mapper.NewsMapper.updateClickNum - ==>  Preparing: update t_news set click_num = ? where id = ?
+2026-06-10 20:10:00.025 [scheduling-1] DEBUG com.elderly.mapper.NewsMapper.updateClickNum - ==> Parameters: 3(Integer), 1(Integer)
+2026-06-10 20:10:00.027 [scheduling-1] DEBUG com.elderly.mapper.NewsMapper.updateClickNum - <==    Updates: 0
+2026-06-10 20:10:00.027 [scheduling-1] INFO  com.elderly.service.impl.NewsServiceImpl - 浏览量同步完成，共更新 1 条记录
+2026-06-10 20:15:33.383 [http-nio-8080-exec-7] DEBUG com.elderly.service.impl.UserServiceImpl - 统计数据从数据库获取
+2026-06-10 20:15:33.385 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.EmployeeMapper.countTotal - ==>  Preparing: select count(id) from t_employee;
+2026-06-10 20:15:33.385 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.EmployeeMapper.countTotal - ==> Parameters: 
+2026-06-10 20:15:33.389 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.EmployeeMapper.countTotal - <==      Total: 1
+2026-06-10 20:15:33.389 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.LiveMapper.countTotal - ==>  Preparing: select count(id) from t_live where status = 0;
+2026-06-10 20:15:33.389 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.LiveMapper.countTotal - ==> Parameters: 
+2026-06-10 20:15:33.391 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.LiveMapper.countTotal - <==      Total: 1
+2026-06-10 20:15:33.391 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.RoomMapper.countTotal - ==>  Preparing: select count(id) from t_room;
+2026-06-10 20:15:33.391 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.RoomMapper.countTotal - ==> Parameters: 
+2026-06-10 20:15:33.393 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.RoomMapper.countTotal - <==      Total: 1
+2026-06-10 20:15:33.393 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.BedMapper.countTotal - ==>  Preparing: select count(id) from t_bed;
+2026-06-10 20:15:33.393 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.BedMapper.countTotal - ==> Parameters: 
+2026-06-10 20:15:33.397 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.BedMapper.countTotal - <==      Total: 1
+2026-06-10 20:15:33.397 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.BedMapper.countByStatus - ==>  Preparing: select count(id) from t_bed where status = ?;
+2026-06-10 20:15:33.397 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.BedMapper.countByStatus - ==> Parameters: 0(Integer)
+2026-06-10 20:15:33.398 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.BedMapper.countByStatus - <==      Total: 1
+2026-06-10 20:15:33.398 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.BedMapper.countByStatus - ==>  Preparing: select count(id) from t_bed where status = ?;
+2026-06-10 20:15:33.398 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.BedMapper.countByStatus - ==> Parameters: 1(Integer)
+2026-06-10 20:15:33.398 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.BedMapper.countByStatus - <==      Total: 1
+2026-06-10 20:15:33.399 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.LiveMapper.countBySex - ==>  Preparing: select count(id) from t_live where status = 0 and sex = ?;
+2026-06-10 20:15:33.399 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.LiveMapper.countBySex - ==> Parameters: 0(Integer)
+2026-06-10 20:15:33.399 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.LiveMapper.countBySex - <==      Total: 1
+2026-06-10 20:15:33.399 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.LiveMapper.countBySex - ==>  Preparing: select count(id) from t_live where status = 0 and sex = ?;
+2026-06-10 20:15:33.399 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.LiveMapper.countBySex - ==> Parameters: 1(Integer)
+2026-06-10 20:15:33.399 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.LiveMapper.countBySex - <==      Total: 1
+2026-06-10 20:15:33.399 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.LiveMapper.countByDate - ==>  Preparing: select count(id) from t_live where status = 0 and begin_time = ?
+2026-06-10 20:15:33.401 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.LiveMapper.countByDate - ==> Parameters: 2026-06-04(String)
+2026-06-10 20:15:33.401 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.LiveMapper.countByDate - <==      Total: 1
+2026-06-10 20:15:33.401 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.LiveMapper.countByDate - ==>  Preparing: select count(id) from t_live where status = 0 and begin_time = ?
+2026-06-10 20:15:33.401 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.LiveMapper.countByDate - ==> Parameters: 2026-06-05(String)
+2026-06-10 20:15:33.402 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.LiveMapper.countByDate - <==      Total: 1
+2026-06-10 20:15:33.402 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.LiveMapper.countByDate - ==>  Preparing: select count(id) from t_live where status = 0 and begin_time = ?
+2026-06-10 20:15:33.402 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.LiveMapper.countByDate - ==> Parameters: 2026-06-06(String)
+2026-06-10 20:15:33.402 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.LiveMapper.countByDate - <==      Total: 1
+2026-06-10 20:15:33.402 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.LiveMapper.countByDate - ==>  Preparing: select count(id) from t_live where status = 0 and begin_time = ?
+2026-06-10 20:15:33.403 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.LiveMapper.countByDate - ==> Parameters: 2026-06-07(String)
+2026-06-10 20:15:33.403 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.LiveMapper.countByDate - <==      Total: 1
+2026-06-10 20:15:33.403 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.LiveMapper.countByDate - ==>  Preparing: select count(id) from t_live where status = 0 and begin_time = ?
+2026-06-10 20:15:33.403 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.LiveMapper.countByDate - ==> Parameters: 2026-06-08(String)
+2026-06-10 20:15:33.404 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.LiveMapper.countByDate - <==      Total: 1
+2026-06-10 20:15:33.404 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.LiveMapper.countByDate - ==>  Preparing: select count(id) from t_live where status = 0 and begin_time = ?
+2026-06-10 20:15:33.404 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.LiveMapper.countByDate - ==> Parameters: 2026-06-09(String)
+2026-06-10 20:15:33.404 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.LiveMapper.countByDate - <==      Total: 1
+2026-06-10 20:15:33.404 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.LiveMapper.countByDate - ==>  Preparing: select count(id) from t_live where status = 0 and begin_time = ?
+2026-06-10 20:15:33.404 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.LiveMapper.countByDate - ==> Parameters: 2026-06-10(String)
+2026-06-10 20:15:33.405 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.LiveMapper.countByDate - <==      Total: 1
+2026-06-10 20:16:02.188 [http-nio-8080-exec-10] DEBUG com.elderly.service.impl.UserServiceImpl - 统计数据从缓存获取
+2026-06-10 20:16:46.979 [http-nio-8080-exec-1] DEBUG com.elderly.service.impl.UserServiceImpl - 统计数据从缓存获取
+2026-06-10 20:16:50.775 [http-nio-8080-exec-2] DEBUG com.elderly.mapper.UserMapper.findList - ==>  Preparing: select * from t_user order by create_time desc limit ?,?;
+2026-06-10 20:16:50.775 [http-nio-8080-exec-2] DEBUG com.elderly.mapper.UserMapper.findList - ==> Parameters: 0(Integer), 10(Integer)
+2026-06-10 20:16:50.779 [http-nio-8080-exec-2] DEBUG com.elderly.mapper.UserMapper.findList - <==      Total: 5
+2026-06-10 20:16:50.781 [http-nio-8080-exec-2] DEBUG com.elderly.mapper.UserMapper.findTotal - ==>  Preparing: select count(id) from t_user
+2026-06-10 20:16:50.783 [http-nio-8080-exec-2] DEBUG com.elderly.mapper.UserMapper.findTotal - ==> Parameters: 
+2026-06-10 20:16:50.784 [http-nio-8080-exec-2] DEBUG com.elderly.mapper.UserMapper.findTotal - <==      Total: 1
+2026-06-10 20:16:52.333 [http-nio-8080-exec-5] DEBUG com.elderly.mapper.EmployeeMapper.findList - ==>  Preparing: select * from t_employee order by create_time desc limit ?,?;
+2026-06-10 20:16:52.333 [http-nio-8080-exec-5] DEBUG com.elderly.mapper.EmployeeMapper.findList - ==> Parameters: 0(Integer), 10(Integer)
+2026-06-10 20:16:52.337 [http-nio-8080-exec-5] DEBUG com.elderly.mapper.EmployeeMapper.findList - <==      Total: 5
+2026-06-10 20:16:52.337 [http-nio-8080-exec-5] DEBUG com.elderly.mapper.EmployeeMapper.findTotal - ==>  Preparing: select count(id) from t_employee
+2026-06-10 20:16:52.337 [http-nio-8080-exec-5] DEBUG com.elderly.mapper.EmployeeMapper.findTotal - ==> Parameters: 
+2026-06-10 20:16:52.341 [http-nio-8080-exec-5] DEBUG com.elderly.mapper.EmployeeMapper.findTotal - <==      Total: 1
+2026-06-10 20:16:54.812 [http-nio-8080-exec-4] DEBUG com.elderly.service.impl.UserServiceImpl - 统计数据从缓存获取
+2026-06-10 20:16:59.179 [http-nio-8080-exec-6] DEBUG com.elderly.mapper.RoomMapper.findList - ==>  Preparing: select * from t_room order by create_time desc limit ?,?;
+2026-06-10 20:16:59.179 [http-nio-8080-exec-6] DEBUG com.elderly.mapper.RoomMapper.findList - ==> Parameters: 0(Integer), 10(Integer)
+2026-06-10 20:16:59.180 [http-nio-8080-exec-6] DEBUG com.elderly.mapper.RoomMapper.findList - <==      Total: 4
+2026-06-10 20:16:59.182 [http-nio-8080-exec-6] DEBUG com.elderly.mapper.RoomMapper.findTotal - ==>  Preparing: select count(id) from t_room
+2026-06-10 20:16:59.183 [http-nio-8080-exec-6] DEBUG com.elderly.mapper.RoomMapper.findTotal - ==> Parameters: 
+2026-06-10 20:16:59.187 [http-nio-8080-exec-6] DEBUG com.elderly.mapper.RoomMapper.findTotal - <==      Total: 1
+2026-06-10 20:17:02.831 [http-nio-8080-exec-3] DEBUG com.elderly.mapper.BedMapper.findList - ==>  Preparing: select a.*, b.room_name from t_bed a inner join t_room b on a.room_id = b.id order by a.create_time desc limit ?,?;
+2026-06-10 20:17:02.832 [http-nio-8080-exec-3] DEBUG com.elderly.mapper.BedMapper.findList - ==> Parameters: 0(Integer), 10(Integer)
+2026-06-10 20:17:02.833 [http-nio-8080-exec-3] DEBUG com.elderly.mapper.BedMapper.findList - <==      Total: 10
+2026-06-10 20:17:02.833 [http-nio-8080-exec-3] DEBUG com.elderly.mapper.BedMapper.findTotal - ==>  Preparing: select count(a.id) from t_bed a inner join t_room b on a.room_id = b.id
+2026-06-10 20:17:02.833 [http-nio-8080-exec-3] DEBUG com.elderly.mapper.BedMapper.findTotal - ==> Parameters: 
+2026-06-10 20:17:02.835 [http-nio-8080-exec-3] DEBUG com.elderly.mapper.BedMapper.findTotal - <==      Total: 1
+2026-06-10 20:17:03.153 [http-nio-8080-exec-9] DEBUG com.elderly.mapper.RoomMapper.findAll - ==>  Preparing: select * from t_room order by create_time asc;
+2026-06-10 20:17:03.154 [http-nio-8080-exec-9] DEBUG com.elderly.mapper.RoomMapper.findAll - ==> Parameters: 
+2026-06-10 20:17:03.155 [http-nio-8080-exec-9] DEBUG com.elderly.mapper.RoomMapper.findAll - <==      Total: 4
+2026-06-10 20:17:05.062 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.RoomMapper.findList - ==>  Preparing: select * from t_room order by create_time desc limit ?,?;
+2026-06-10 20:17:05.063 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.RoomMapper.findList - ==> Parameters: 0(Integer), 10(Integer)
+2026-06-10 20:17:05.064 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.RoomMapper.findList - <==      Total: 4
+2026-06-10 20:17:05.064 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.RoomMapper.findTotal - ==>  Preparing: select count(id) from t_room
+2026-06-10 20:17:05.064 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.RoomMapper.findTotal - ==> Parameters: 
+2026-06-10 20:17:05.068 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.RoomMapper.findTotal - <==      Total: 1
+2026-06-10 20:17:09.422 [http-nio-8080-exec-8] DEBUG com.elderly.service.impl.UserServiceImpl - 统计数据从缓存获取
+2026-06-10 20:17:27.175 [http-nio-8080-exec-10] DEBUG com.elderly.service.impl.UserServiceImpl - 统计数据从缓存获取
+2026-06-10 20:17:41.327 [http-nio-8080-exec-1] DEBUG com.elderly.service.impl.UserServiceImpl - 统计数据从缓存获取
+2026-06-10 20:19:28.109 [http-nio-8080-exec-2] DEBUG com.elderly.service.impl.UserServiceImpl - 统计数据从缓存获取

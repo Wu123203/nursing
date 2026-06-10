@@ -33,6 +33,10 @@ public class MyBatisConfig {
         // 注册 SQL 注入检测拦截器
         org.apache.ibatis.session.Configuration configuration = new org.apache.ibatis.session.Configuration();
         configuration.addInterceptor(new SqlInjectInterceptor());
+        
+        // 启用驼峰命名自动映射（数据库下划线命名 -> Java 驼峰命名）
+        configuration.setMapUnderscoreToCamelCase(true);
+        
         sessionFactory.setConfiguration(configuration);
         
         return sessionFactory.getObject();
