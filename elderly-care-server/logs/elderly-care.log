@@ -2477,3 +2477,138 @@ Caused by: java.lang.SecurityException: 请求参数包含非法字符，请检�
 2026-06-10 20:17:27.175 [http-nio-8080-exec-10] DEBUG com.elderly.service.impl.UserServiceImpl - 统计数据从缓存获取
 2026-06-10 20:17:41.327 [http-nio-8080-exec-1] DEBUG com.elderly.service.impl.UserServiceImpl - 统计数据从缓存获取
 2026-06-10 20:19:28.109 [http-nio-8080-exec-2] DEBUG com.elderly.service.impl.UserServiceImpl - 统计数据从缓存获取
+2026-06-10 20:20:00.010 [scheduling-1] INFO  com.elderly.service.impl.NewsServiceImpl - 开始同步新闻浏览量到数据库...
+2026-06-10 20:20:00.018 [scheduling-1] DEBUG com.elderly.mapper.NewsMapper.updateClickNum - ==>  Preparing: update t_news set click_num = ? where id = ?
+2026-06-10 20:20:00.019 [scheduling-1] DEBUG com.elderly.mapper.NewsMapper.updateClickNum - ==> Parameters: 3(Integer), 1(Integer)
+2026-06-10 20:20:00.025 [scheduling-1] DEBUG com.elderly.mapper.NewsMapper.updateClickNum - <==    Updates: 0
+2026-06-10 20:20:00.027 [scheduling-1] INFO  com.elderly.service.impl.NewsServiceImpl - 浏览量同步完成，共更新 1 条记录
+2026-06-10 20:20:00.028 [scheduling-1] INFO  com.elderly.service.impl.LikeServiceImpl - 开始同步新闻点赞数到数据库...
+2026-06-10 20:20:00.033 [scheduling-1] DEBUG com.elderly.service.impl.LikeServiceImpl - 没有需要同步的点赞数数据
+2026-06-10 20:20:02.129 [http-nio-8080-exec-5] DEBUG com.elderly.mapper.UserMapper.findList - ==>  Preparing: select * from t_user order by create_time desc limit ?,?;
+2026-06-10 20:20:02.131 [http-nio-8080-exec-5] DEBUG com.elderly.mapper.UserMapper.findList - ==> Parameters: 0(Integer), 10(Integer)
+2026-06-10 20:20:02.133 [http-nio-8080-exec-5] DEBUG com.elderly.mapper.UserMapper.findList - <==      Total: 5
+2026-06-10 20:20:02.135 [http-nio-8080-exec-5] DEBUG com.elderly.mapper.UserMapper.findTotal - ==>  Preparing: select count(id) from t_user
+2026-06-10 20:20:02.135 [http-nio-8080-exec-5] DEBUG com.elderly.mapper.UserMapper.findTotal - ==> Parameters: 
+2026-06-10 20:20:02.138 [http-nio-8080-exec-5] DEBUG com.elderly.mapper.UserMapper.findTotal - <==      Total: 1
+2026-06-10 20:20:02.851 [http-nio-8080-exec-4] DEBUG com.elderly.service.impl.UserServiceImpl - 统计数据从缓存获取
+2026-06-10 20:20:03.549 [http-nio-8080-exec-6] DEBUG com.elderly.mapper.UserMapper.findList - ==>  Preparing: select * from t_user order by create_time desc limit ?,?;
+2026-06-10 20:20:03.549 [http-nio-8080-exec-6] DEBUG com.elderly.mapper.UserMapper.findList - ==> Parameters: 0(Integer), 10(Integer)
+2026-06-10 20:20:03.551 [http-nio-8080-exec-6] DEBUG com.elderly.mapper.UserMapper.findList - <==      Total: 5
+2026-06-10 20:20:03.552 [http-nio-8080-exec-6] DEBUG com.elderly.mapper.UserMapper.findTotal - ==>  Preparing: select count(id) from t_user
+2026-06-10 20:20:03.552 [http-nio-8080-exec-6] DEBUG com.elderly.mapper.UserMapper.findTotal - ==> Parameters: 
+2026-06-10 20:20:03.555 [http-nio-8080-exec-6] DEBUG com.elderly.mapper.UserMapper.findTotal - <==      Total: 1
+2026-06-10 20:20:05.200 [http-nio-8080-exec-3] DEBUG com.elderly.mapper.EmployeeMapper.findList - ==>  Preparing: select * from t_employee order by create_time desc limit ?,?;
+2026-06-10 20:20:05.202 [http-nio-8080-exec-3] DEBUG com.elderly.mapper.EmployeeMapper.findList - ==> Parameters: 0(Integer), 10(Integer)
+2026-06-10 20:20:05.205 [http-nio-8080-exec-3] DEBUG com.elderly.mapper.EmployeeMapper.findList - <==      Total: 5
+2026-06-10 20:20:05.205 [http-nio-8080-exec-3] DEBUG com.elderly.mapper.EmployeeMapper.findTotal - ==>  Preparing: select count(id) from t_employee
+2026-06-10 20:20:05.205 [http-nio-8080-exec-3] DEBUG com.elderly.mapper.EmployeeMapper.findTotal - ==> Parameters: 
+2026-06-10 20:20:05.209 [http-nio-8080-exec-3] DEBUG com.elderly.mapper.EmployeeMapper.findTotal - <==      Total: 1
+2026-06-10 20:20:07.490 [http-nio-8080-exec-9] DEBUG com.elderly.mapper.RoomMapper.findList - ==>  Preparing: select * from t_room order by create_time desc limit ?,?;
+2026-06-10 20:20:07.490 [http-nio-8080-exec-9] DEBUG com.elderly.mapper.RoomMapper.findList - ==> Parameters: 0(Integer), 10(Integer)
+2026-06-10 20:20:07.492 [http-nio-8080-exec-9] DEBUG com.elderly.mapper.RoomMapper.findList - <==      Total: 4
+2026-06-10 20:20:07.493 [http-nio-8080-exec-9] DEBUG com.elderly.mapper.RoomMapper.findTotal - ==>  Preparing: select count(id) from t_room
+2026-06-10 20:20:07.493 [http-nio-8080-exec-9] DEBUG com.elderly.mapper.RoomMapper.findTotal - ==> Parameters: 
+2026-06-10 20:20:07.497 [http-nio-8080-exec-9] DEBUG com.elderly.mapper.RoomMapper.findTotal - <==      Total: 1
+2026-06-10 20:20:08.513 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.BedMapper.findList - ==>  Preparing: select a.*, b.room_name from t_bed a inner join t_room b on a.room_id = b.id order by a.create_time desc limit ?,?;
+2026-06-10 20:20:08.516 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.BedMapper.findList - ==> Parameters: 0(Integer), 10(Integer)
+2026-06-10 20:20:08.519 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.BedMapper.findList - <==      Total: 10
+2026-06-10 20:20:08.520 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.BedMapper.findTotal - ==>  Preparing: select count(a.id) from t_bed a inner join t_room b on a.room_id = b.id
+2026-06-10 20:20:08.520 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.BedMapper.findTotal - ==> Parameters: 
+2026-06-10 20:20:08.521 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.BedMapper.findTotal - <==      Total: 1
+2026-06-10 20:20:08.715 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.RoomMapper.findAll - ==>  Preparing: select * from t_room order by create_time asc;
+2026-06-10 20:20:08.716 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.RoomMapper.findAll - ==> Parameters: 
+2026-06-10 20:20:08.717 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.RoomMapper.findAll - <==      Total: 4
+2026-06-10 20:20:09.251 [http-nio-8080-exec-10] DEBUG com.elderly.mapper.LiveMapper.findList - ==>  Preparing: select a.*, b.bed_no,b.room_id, c.room_name from t_live a inner join t_bed b on a.bed_id = b.id inner join t_room c on b.room_id = c.id order by a.create_time desc limit ?,?;
+2026-06-10 20:20:09.251 [http-nio-8080-exec-10] DEBUG com.elderly.mapper.LiveMapper.findList - ==> Parameters: 0(Integer), 10(Integer)
+2026-06-10 20:20:09.256 [http-nio-8080-exec-10] DEBUG com.elderly.mapper.LiveMapper.findList - <==      Total: 7
+2026-06-10 20:20:09.256 [http-nio-8080-exec-10] DEBUG com.elderly.mapper.LiveMapper.findTotal - ==>  Preparing: select count(a.id) from t_live a inner join t_bed b on a.bed_id = b.id inner join t_room c on b.room_id = c.id
+2026-06-10 20:20:09.256 [http-nio-8080-exec-10] DEBUG com.elderly.mapper.LiveMapper.findTotal - ==> Parameters: 
+2026-06-10 20:20:09.257 [http-nio-8080-exec-10] DEBUG com.elderly.mapper.LiveMapper.findTotal - <==      Total: 1
+2026-06-10 20:20:09.555 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.UserMapper.findAll - ==>  Preparing: select * from t_user order by id asc;
+2026-06-10 20:20:09.556 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.UserMapper.findAll - ==> Parameters: 
+2026-06-10 20:20:09.558 [http-nio-8080-exec-2] DEBUG com.elderly.mapper.RoomMapper.findAll - ==>  Preparing: select * from t_room order by create_time asc;
+2026-06-10 20:20:09.558 [http-nio-8080-exec-2] DEBUG com.elderly.mapper.RoomMapper.findAll - ==> Parameters: 
+2026-06-10 20:20:09.558 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.UserMapper.findAll - <==      Total: 5
+2026-06-10 20:20:09.560 [http-nio-8080-exec-2] DEBUG com.elderly.mapper.RoomMapper.findAll - <==      Total: 4
+2026-06-10 20:20:10.688 [http-nio-8080-exec-5] DEBUG com.elderly.mapper.VisitMapper.findList - ==>  Preparing: select a.*, b.bed_id,b.name, c.bed_no,c.room_id, d.room_name from t_visit a inner join t_live b on a.live_id = b.id inner join t_bed c on b.bed_id = c.id inner join t_room d on c.room_id = d.id order by a.create_time desc limit ?,?;
+2026-06-10 20:20:10.689 [http-nio-8080-exec-5] DEBUG com.elderly.mapper.VisitMapper.findList - ==> Parameters: 0(Integer), 10(Integer)
+2026-06-10 20:20:10.691 [http-nio-8080-exec-5] DEBUG com.elderly.mapper.VisitMapper.findList - <==      Total: 2
+2026-06-10 20:20:10.692 [http-nio-8080-exec-5] DEBUG com.elderly.mapper.VisitMapper.findTotal - ==>  Preparing: select count(a.id) from t_visit a inner join t_live b on a.live_id = b.id inner join t_bed c on b.bed_id = c.id inner join t_room d on c.room_id = d.id
+2026-06-10 20:20:10.692 [http-nio-8080-exec-5] DEBUG com.elderly.mapper.VisitMapper.findTotal - ==> Parameters: 
+2026-06-10 20:20:10.693 [http-nio-8080-exec-5] DEBUG com.elderly.mapper.VisitMapper.findTotal - <==      Total: 1
+2026-06-10 20:20:10.899 [http-nio-8080-exec-4] DEBUG com.elderly.mapper.RoomMapper.findAll - ==>  Preparing: select * from t_room order by create_time asc;
+2026-06-10 20:20:10.899 [http-nio-8080-exec-4] DEBUG com.elderly.mapper.RoomMapper.findAll - ==> Parameters: 
+2026-06-10 20:20:10.903 [http-nio-8080-exec-4] DEBUG com.elderly.mapper.RoomMapper.findAll - <==      Total: 4
+2026-06-10 20:20:11.968 [http-nio-8080-exec-6] DEBUG com.elderly.mapper.LeaveMapper.findList - ==>  Preparing: select a.*, b.bed_id,b.name, c.bed_no,c.room_id, d.room_name from t_leave a inner join t_live b on a.live_id = b.id inner join t_bed c on b.bed_id = c.id inner join t_room d on c.room_id = d.id order by a.create_time desc limit ?,?;
+2026-06-10 20:20:11.969 [http-nio-8080-exec-6] DEBUG com.elderly.mapper.LeaveMapper.findList - ==> Parameters: 0(Integer), 5(Integer)
+2026-06-10 20:20:11.971 [http-nio-8080-exec-6] DEBUG com.elderly.mapper.LeaveMapper.findList - <==      Total: 2
+2026-06-10 20:20:11.972 [http-nio-8080-exec-6] DEBUG com.elderly.mapper.LeaveMapper.findTotal - ==>  Preparing: select count(a.id) from t_leave a inner join t_live b on a.live_id = b.id inner join t_bed c on b.bed_id = c.id inner join t_room d on c.room_id = d.id
+2026-06-10 20:20:11.972 [http-nio-8080-exec-6] DEBUG com.elderly.mapper.LeaveMapper.findTotal - ==> Parameters: 
+2026-06-10 20:20:11.975 [http-nio-8080-exec-6] DEBUG com.elderly.mapper.LeaveMapper.findTotal - <==      Total: 1
+2026-06-10 20:20:13.045 [http-nio-8080-exec-3] DEBUG com.elderly.mapper.BillMapper.findList - ==>  Preparing: select a.*, b.bed_id,b.name, c.bed_no,c.room_id, d.room_name from t_bill a inner join t_live b on a.live_id = b.id inner join t_bed c on b.bed_id = c.id inner join t_room d on c.room_id = d.id order by a.create_time desc limit ?,?;
+2026-06-10 20:20:13.045 [http-nio-8080-exec-3] DEBUG com.elderly.mapper.BillMapper.findList - ==> Parameters: 0(Integer), 10(Integer)
+2026-06-10 20:20:13.049 [http-nio-8080-exec-3] DEBUG com.elderly.mapper.BillMapper.findList - <==      Total: 4
+2026-06-10 20:20:13.049 [http-nio-8080-exec-3] DEBUG com.elderly.mapper.BillMapper.findTotal - ==>  Preparing: select count(a.id) from t_bill a inner join t_live b on a.live_id = b.id inner join t_bed c on b.bed_id = c.id inner join t_room d on c.room_id = d.id
+2026-06-10 20:20:13.050 [http-nio-8080-exec-3] DEBUG com.elderly.mapper.BillMapper.findTotal - ==> Parameters: 
+2026-06-10 20:20:13.051 [http-nio-8080-exec-3] DEBUG com.elderly.mapper.BillMapper.findTotal - <==      Total: 1
+2026-06-10 20:20:13.273 [http-nio-8080-exec-9] DEBUG com.elderly.mapper.RoomMapper.findAll - ==>  Preparing: select * from t_room order by create_time asc;
+2026-06-10 20:20:13.273 [http-nio-8080-exec-9] DEBUG com.elderly.mapper.RoomMapper.findAll - ==> Parameters: 
+2026-06-10 20:20:13.275 [http-nio-8080-exec-9] DEBUG com.elderly.mapper.RoomMapper.findAll - <==      Total: 4
+2026-06-10 20:20:14.172 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.NewsMapper.findList - ==>  Preparing: select * from t_news order by create_time desc limit ?,?;
+2026-06-10 20:20:14.172 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.NewsMapper.findList - ==> Parameters: 0(Integer), 10(Integer)
+2026-06-10 20:20:14.175 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.NewsMapper.findList - <==      Total: 5
+2026-06-10 20:20:14.175 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.NewsMapper.findTotal - ==>  Preparing: select count(id) from t_news
+2026-06-10 20:20:14.175 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.NewsMapper.findTotal - ==> Parameters: 
+2026-06-10 20:20:14.177 [http-nio-8080-exec-7] DEBUG com.elderly.mapper.NewsMapper.findTotal - <==      Total: 1
+2026-06-10 20:20:14.820 [http-nio-8080-exec-10] DEBUG com.elderly.mapper.CommentMapper.findList - ==>  Preparing: select a.id,a.content,a.news_id,a.create_time, case when a.pid =0 then 0 else 1 end as type, b.avatar,b.nickname, d.nickname as be_reply_name, e.title from t_comment a inner join t_user b on a.user_id = b.id left join t_comment c on a.pid = c.id left join t_user d on c.user_id = d.id inner join t_news e on a.news_id = e.id order by a.create_time desc limit ?,?;
+2026-06-10 20:20:14.821 [http-nio-8080-exec-10] DEBUG com.elderly.mapper.CommentMapper.findList - ==> Parameters: 0(Integer), 10(Integer)
+2026-06-10 20:20:14.824 [http-nio-8080-exec-10] DEBUG com.elderly.mapper.CommentMapper.findList - <==      Total: 6
+2026-06-10 20:20:14.825 [http-nio-8080-exec-10] DEBUG com.elderly.mapper.CommentMapper.findTotal - ==>  Preparing: select count(a.id) from t_comment a inner join t_user b on a.user_id = b.id left join t_comment c on a.pid = c.id left join t_user d on c.user_id = d.id inner join t_news e on a.news_id = e.id
+2026-06-10 20:20:14.825 [http-nio-8080-exec-10] DEBUG com.elderly.mapper.CommentMapper.findTotal - ==> Parameters: 
+2026-06-10 20:20:14.826 [http-nio-8080-exec-10] DEBUG com.elderly.mapper.CommentMapper.findTotal - <==      Total: 1
+2026-06-10 20:20:17.068 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.FeedbackMapper.findList - ==>  Preparing: select a.*,b.nickname,b.avatar from t_feedback a inner join t_user b on a.user_id = b.id order by a.create_time desc limit ?,?;
+2026-06-10 20:20:17.069 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.FeedbackMapper.findList - ==> Parameters: 0(Integer), 10(Integer)
+2026-06-10 20:20:17.070 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.FeedbackMapper.findList - <==      Total: 7
+2026-06-10 20:20:17.071 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.FeedbackMapper.findTotal - ==>  Preparing: select count(a.id) from t_feedback a inner join t_user b on a.user_id = b.id
+2026-06-10 20:20:17.071 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.FeedbackMapper.findTotal - ==> Parameters: 
+2026-06-10 20:20:17.072 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.FeedbackMapper.findTotal - <==      Total: 1
+2026-06-10 20:20:19.966 [http-nio-8080-exec-2] DEBUG com.elderly.mapper.NoticeMapper.findList - ==>  Preparing: select * from t_notice order by create_time desc limit ?,?;
+2026-06-10 20:20:19.967 [http-nio-8080-exec-2] DEBUG com.elderly.mapper.NoticeMapper.findList - ==> Parameters: 0(Integer), 10(Integer)
+2026-06-10 20:20:19.969 [http-nio-8080-exec-2] DEBUG com.elderly.mapper.NoticeMapper.findList - <==      Total: 1
+2026-06-10 20:20:19.970 [http-nio-8080-exec-2] DEBUG com.elderly.mapper.NoticeMapper.findTotal - ==>  Preparing: select count(id) from t_notice
+2026-06-10 20:20:19.970 [http-nio-8080-exec-2] DEBUG com.elderly.mapper.NoticeMapper.findTotal - ==> Parameters: 
+2026-06-10 20:20:19.973 [http-nio-8080-exec-2] DEBUG com.elderly.mapper.NoticeMapper.findTotal - <==      Total: 1
+2026-06-10 20:20:21.680 [http-nio-8080-exec-5] DEBUG c.elderly.mapper.ResthomeMapper.selectByPrimaryKey - ==>  Preparing: select id , title, begin_time, end_time, phone, address, cover, brief, content, click_num, create_time, update_time from t_resthome where id = ?
+2026-06-10 20:20:21.681 [http-nio-8080-exec-5] DEBUG c.elderly.mapper.ResthomeMapper.selectByPrimaryKey - ==> Parameters: 1(Integer)
+2026-06-10 20:20:21.682 [http-nio-8080-exec-5] DEBUG c.elderly.mapper.ResthomeMapper.selectByPrimaryKey - <==      Total: 1
+2026-06-10 20:20:24.002 [http-nio-8080-exec-4] DEBUG com.elderly.mapper.NewsMapper.findLatestTopList - ==>  Preparing: select * from t_news order by create_time desc limit ?;
+2026-06-10 20:20:24.003 [http-nio-8080-exec-4] DEBUG com.elderly.mapper.NewsMapper.findLatestTopList - ==> Parameters: 5(Integer)
+2026-06-10 20:20:24.005 [http-nio-8080-exec-4] DEBUG com.elderly.mapper.NewsMapper.findLatestTopList - <==      Total: 5
+2026-06-10 20:20:24.264 [http-nio-8080-exec-6] DEBUG com.elderly.mapper.NoticeMapper.findLatestTopList - ==>  Preparing: select * from t_notice order by id desc limit ?;
+2026-06-10 20:20:24.266 [http-nio-8080-exec-6] DEBUG com.elderly.mapper.NoticeMapper.findLatestTopList - ==> Parameters: 5(Integer)
+2026-06-10 20:20:24.269 [http-nio-8080-exec-6] DEBUG com.elderly.mapper.NoticeMapper.findLatestTopList - <==      Total: 1
+2026-06-10 20:20:24.309 [http-nio-8080-exec-3] DEBUG com.elderly.mapper.NewsMapper.findClickTopList - ==>  Preparing: select * from t_news order by click_num desc limit ?;
+2026-06-10 20:20:24.309 [http-nio-8080-exec-3] DEBUG com.elderly.mapper.NewsMapper.findClickTopList - ==> Parameters: 6(Integer)
+2026-06-10 20:20:24.311 [http-nio-8080-exec-3] DEBUG com.elderly.mapper.NewsMapper.findClickTopList - <==      Total: 5
+2026-06-10 20:20:25.682 [http-nio-8080-exec-9] DEBUG c.elderly.mapper.ResthomeMapper.selectByPrimaryKey - ==>  Preparing: select id , title, begin_time, end_time, phone, address, cover, brief, content, click_num, create_time, update_time from t_resthome where id = ?
+2026-06-10 20:20:25.683 [http-nio-8080-exec-9] DEBUG c.elderly.mapper.ResthomeMapper.selectByPrimaryKey - ==> Parameters: 1(Integer)
+2026-06-10 20:20:25.685 [http-nio-8080-exec-9] DEBUG c.elderly.mapper.ResthomeMapper.selectByPrimaryKey - <==      Total: 1
+2026-06-10 20:20:27.083 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.NewsMapper.findList - ==>  Preparing: select * from t_news order by create_time desc limit ?,?;
+2026-06-10 20:20:27.084 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.NewsMapper.findList - ==> Parameters: 0(Integer), 10(Integer)
+2026-06-10 20:20:27.087 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.NewsMapper.findList - <==      Total: 5
+2026-06-10 20:20:27.087 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.NewsMapper.findTotal - ==>  Preparing: select count(id) from t_news
+2026-06-10 20:20:27.088 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.NewsMapper.findTotal - ==> Parameters: 
+2026-06-10 20:20:27.091 [http-nio-8080-exec-8] DEBUG com.elderly.mapper.NewsMapper.findTotal - <==      Total: 1
+2026-06-10 20:20:27.096 [http-nio-8080-exec-10] DEBUG com.elderly.service.impl.NewsServiceImpl - 热点新闻列表从缓存获取: cache:news:hotclick:6
+2026-06-10 20:20:28.582 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.FeedbackMapper.findList - ==>  Preparing: select a.*,b.nickname,b.avatar from t_feedback a inner join t_user b on a.user_id = b.id order by a.create_time desc limit ?,?;
+2026-06-10 20:20:28.582 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.FeedbackMapper.findList - ==> Parameters: 0(Integer), 10(Integer)
+2026-06-10 20:20:28.584 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.FeedbackMapper.findList - <==      Total: 7
+2026-06-10 20:20:28.585 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.FeedbackMapper.findTotal - ==>  Preparing: select count(a.id) from t_feedback a inner join t_user b on a.user_id = b.id
+2026-06-10 20:20:28.585 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.FeedbackMapper.findTotal - ==> Parameters: 
+2026-06-10 20:20:28.585 [http-nio-8080-exec-1] DEBUG com.elderly.mapper.FeedbackMapper.findTotal - <==      Total: 1
+2026-06-10 20:20:29.611 [http-nio-8080-exec-5] DEBUG com.elderly.mapper.NoticeMapper.findList - ==>  Preparing: select * from t_notice order by create_time desc limit ?,?;
+2026-06-10 20:20:29.612 [http-nio-8080-exec-5] DEBUG com.elderly.mapper.NoticeMapper.findList - ==> Parameters: 0(Integer), 10(Integer)
+2026-06-10 20:20:29.613 [http-nio-8080-exec-5] DEBUG com.elderly.mapper.NoticeMapper.findList - <==      Total: 1
+2026-06-10 20:20:29.614 [http-nio-8080-exec-5] DEBUG com.elderly.mapper.NoticeMapper.findTotal - ==>  Preparing: select count(id) from t_notice
+2026-06-10 20:20:29.614 [http-nio-8080-exec-5] DEBUG com.elderly.mapper.NoticeMapper.findTotal - ==> Parameters: 
+2026-06-10 20:20:29.617 [http-nio-8080-exec-5] DEBUG com.elderly.mapper.NoticeMapper.findTotal - <==      Total: 1
